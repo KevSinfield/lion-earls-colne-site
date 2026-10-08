@@ -18,7 +18,10 @@
   ph.textContent = D.phone;
   ph.href = "tel:" + D.phone.replace(/\s/g, "");
   $("#stickyCall").href = ph.href;
-  document.querySelectorAll("[data-book]").forEach(function (a) { a.href = D.bookingUrl; });
+  document.querySelectorAll("[data-book]").forEach(function (a) {
+    if (D.bookingUrl) { a.href = D.bookingUrl; a.rel = "noopener"; }
+    else { a.href = "#find"; a.title = "Online booking coming soon"; }  // waiting for the Stampede link
+  });
 
   // Week
   D.week.forEach(function (w) {

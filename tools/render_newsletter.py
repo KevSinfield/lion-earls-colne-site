@@ -22,7 +22,7 @@ VENUE = {
     "address": "High Street, Earls Colne, Essex CO6 2PA",
     "phone": "01206 911385",
     "site": "https://thelionearlscolne.com",  # TODO: confirm once the real site is live
-    "book": "tel:01206911385",                 # TODO: swap for the online booking link
+    "book": "",  # TODO: the Lion's own Stampede link. Never tel:. Empty = link to the site's Find us section
 }
 UNSUBSCRIBE = "[[UNSUBSCRIBE_URL]]"  # TODO: replace with Brevo's unsubscribe tag when sending
 
@@ -163,7 +163,7 @@ def render(content, menu, sample, menu_limit):
     # CTA
     parts.append(row(f'<p style="margin:0 0 18px;text-align:center;font:italic 18px {SERIF};color:{INK};">'
                      f'{e(content.get("cta_text", "Tables go quickly at the weekend."))}</p>' +
-                     button("Book a table", VENUE["book"]), pad="34px 36px 40px"))
+                     button("Book a table", VENUE["book"] or VENUE["site"] + "#find"), pad="34px 36px 40px"))
     # Footer
     parts.append(row(
         f'<p style="margin:0;text-align:center;font:13px/1.7 {SANS};color:{MUTE};">'

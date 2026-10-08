@@ -17,8 +17,9 @@ Client project for Craig's pub (The Lion, High Street, Earls Colne CO6 2PA). Sta
 4. **Keep it a mock-up until told otherwise:** the page carries `noindex` and `robots.txt` disallows everything. Remove both only when the site goes live.
 5. **Email must not depend on images.** The newsletter uses a live-text masthead and web-safe fonts (Georgia/Arial), light cream background. No dark newsletter, no image logo (it failed to load in Apple Mail).
 6. **One source of truth per thing:** menus in `data/menu.json`; hours, events, contact details in `js/data.js`. Don't copy them into other files.
-7. **Remove `demo-weekend-specials` from `data/menu.json` before anyone outside sees the site:** it is the Chapel's menu, there only to show the layout.
-8. **No em dashes in copy.** Write British.
+7. **No Chapel data in `data/menu.json`.** The demo tab of the Chapel's weekend specials was removed on 8 Oct 2026; don't add it back. Test with `tools/samples/` and a scratch copy of the menu file instead.
+8. **All "Book a table" links go through Stampede, nothing else.** Use the Lion's own Stampede link (not the Chapel's) in `bookingUrl` in `js/data.js` and `VENUE["book"]` in `tools/render_newsletter.py`. Until it exists they point to the Find us section. Never a `tel:` link on a Book button. (A plain phone number as contact info is fine.) Waiting on the Stampede set-up.
+9. **No em dashes in copy.** Write British.
 
 ## Layout
 
@@ -29,4 +30,10 @@ Client project for Craig's pub (The Lion, High Street, Earls Colne CO6 2PA). Sta
 
 ## Git
 
-Own private repo (`KevSinfield/lion-earls-colne`). This folder is listed in `~/Dev/.gitignore`, so the dev-sync job does not track it. Commit and push from here. Co-Authored-By trailer on commits.
+Two repos, one folder:
+- `origin` = private working repo (`KevSinfield/lion-earls-colne`). Normal commits and pushes go here.
+- `public` = public copy (`KevSinfield/lion-earls-colne-site`), created 8 Oct 2026 from a history-free branch (`public-release`) so no old commits are exposed. Never push `main` to `public`. To update it, rebuild a history-free commit of the files you want public and push that, only when Kev says so. Check the tree for mailbox addresses and secrets first.
+
+GitHub Pages is on for the public repo (turned on 8 Oct 2026): https://kevsinfield.github.io/lion-earls-colne-site/ (serves branch `main` of `public`, so it only changes when `public` is updated). It is a mock-up and `noindex`.
+
+This folder is listed in `~/Dev/.gitignore`, so the dev-sync job does not track it. Co-Authored-By trailer on commits. No force-pushes without Kev's say-so (the auto classifier blocks them).
