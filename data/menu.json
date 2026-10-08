@@ -1,0 +1,229 @@
+{
+  "menus": [
+    {
+      "id": "sunday-menu",
+      "venue": "The Lion Earls Colne",
+      "title": "Sunday Menu",
+      "subtitle": "Every Sunday",
+      "valid_from": null,
+      "valid_to": null,
+      "intro": null,
+      "sections": [
+        {
+          "name": "To Begin",
+          "items": [
+            {
+              "name": "Halloumi Bites with Hot Honey",
+              "price": 9.0,
+              "description": "Golden fried halloumi with hot honey.",
+              "tags": [
+                "vegetarian"
+              ],
+              "label": null
+            },
+            {
+              "name": "Chicken & Tarragon Terrine",
+              "price": 9.95,
+              "description": "House-made chicken and tarragon terrine with toasted ciabatta and dressed leaves.",
+              "tags": [],
+              "label": null
+            },
+            {
+              "name": "Garlic & Chilli Prawns",
+              "price": 11.95,
+              "description": "King prawns in garlic and chilli butter with toasted ciabatta.",
+              "tags": [],
+              "label": null
+            },
+            {
+              "name": "Creamy Garlic Mushrooms",
+              "price": 7.95,
+              "description": "Mushrooms in a creamy garlic and herb sauce with toasted ciabatta.",
+              "tags": [
+                "vegan"
+              ],
+              "label": null
+            }
+          ]
+        },
+        {
+          "name": "Our Roasts",
+          "note": "Served with garlic & herb roast potatoes, seasonal roasted roots, buttery greens, Yorkshire pudding, sage stuffing and gravy.",
+          "items": [
+            {
+              "name": "Locally Reared Sirloin of Beef",
+              "price": 21.95,
+              "description": "Locally reared sirloin, served pink.",
+              "tags": [],
+              "label": null
+            },
+            {
+              "name": "Roasted Chicken Supreme",
+              "price": 19.95,
+              "description": "Roasted chicken supreme with crisp seasoned skin.",
+              "tags": [],
+              "label": null
+            },
+            {
+              "name": "Honey & Mustard Glazed Gammon",
+              "price": 18.95,
+              "description": "Slow-roasted gammon with honey & wholegrain mustard glaze.",
+              "tags": [],
+              "label": null
+            },
+            {
+              "name": "Chef's Vegetarian Roast",
+              "price": 17.95,
+              "description": "A seasonal meat-free choice, ask your server for today's option.",
+              "tags": [
+                "vegetarian"
+              ],
+              "label": null
+            },
+            {
+              "name": "Mixed Roast",
+              "price": 23.95,
+              "description": "Beef, chicken and gammon with all the Sunday trimmings.",
+              "tags": [],
+              "label": null
+            },
+            {
+              "name": "Children's Roast",
+              "price": 10.95,
+              "description": "Choice of roast meat or vegetarian option with Sunday trimmings.",
+              "tags": [],
+              "label": null
+            }
+          ]
+        },
+        {
+          "name": "Sunday Sides",
+          "items": [
+            {
+              "name": "Rich, Gooey Cauliflower Cheese",
+              "price": 5.0,
+              "description": "",
+              "tags": [],
+              "label": null
+            },
+            {
+              "name": "Pigs in Blankets",
+              "price": 4.5,
+              "description": "",
+              "tags": [],
+              "label": null
+            }
+          ]
+        },
+        {
+          "name": "Desserts",
+          "items": [
+            {
+              "name": "Chocolate & Cherry Cheesecake",
+              "price": 8.0,
+              "description": "Chocolate cheesecake with cherry compote.",
+              "tags": [
+                "vegan",
+                "gluten free"
+              ],
+              "label": null
+            },
+            {
+              "name": "Triple Chocolate Brownie",
+              "price": 8.0,
+              "description": "Triple chocolate brownie with warm milk chocolate sauce.",
+              "tags": [],
+              "label": null
+            },
+            {
+              "name": "Sticky Toffee Pudding",
+              "price": 8.0,
+              "description": "Date sponge with rich butterscotch sauce.",
+              "tags": [],
+              "label": null
+            },
+            {
+              "name": "Meringue Nest",
+              "price": 7.5,
+              "description": "Meringue, vanilla ice cream and warm winter berry compote.",
+              "tags": [],
+              "label": null
+            }
+          ]
+        }
+      ],
+      "offers": [],
+      "events": [],
+      "footnote": "Please let a member of staff know if you have any dietary requirements.",
+      "todo": "TODO: confirm these are the current prices. Taken from the Lion's 2 October menu post."
+    },
+    {
+      "id": "demo-weekend-specials",
+      "venue": "The Chapel Inn Coggeshall",
+      "title": "Weekend Specials (demo)",
+      "subtitle": "Friday, Saturday & Sunday · 2–4 October 2026",
+      "valid_from": null,
+      "valid_to": null,
+      "intro": "A short seasonal selection from our kitchen, alongside our regular menu — available all weekend while stocks last.",
+      "sections": [
+        {
+          "name": "To Begin",
+          "items": [
+            {
+              "name": "Corn Ribs",
+              "price": 8.0,
+              "description": "Charred corn ribs, gochujang butter, crispy onions, sesame and lime.",
+              "tags": [],
+              "label": null
+            },
+            {
+              "name": "Crispy Squid Rings",
+              "price": 9.0,
+              "description": "Curried mayonnaise, pickled shallots and dressed leaf.",
+              "tags": [],
+              "label": null
+            }
+          ]
+        },
+        {
+          "name": "Big Plates",
+          "items": [
+            {
+              "name": "Gammon, Egg & Chips",
+              "price": 17.5,
+              "description": "Grilled gammon steak, crispy skin-on chips, fried free-range egg, grilled tomato and pineapple chutney.",
+              "tags": [],
+              "label": null
+            },
+            {
+              "name": "Gnocchi",
+              "price": 17.5,
+              "description": "Pan-fried potato gnocchi, roasted squash, wild mushrooms, spinach, sage butter and Parmesan.",
+              "tags": [
+                "vegetarian"
+              ],
+              "label": null
+            },
+            {
+              "name": "Luxury Fish Pie",
+              "price": 19.5,
+              "description": "Haddock, salmon and king prawns in a creamy white wine sauce, topped with buttery mashed potato and mature cheddar, baked until golden and served with seasonal greens.",
+              "tags": [],
+              "label": "Market fish · this weekend"
+            }
+          ]
+        }
+      ],
+      "offers": [
+        {
+          "title": "Lunchtime meal deal",
+          "headline": "£15 — lunch and a drink",
+          "detail": "Tuesday to Friday, 12pm to 2pm"
+        }
+      ],
+      "events": [],
+      "footnote": "100% of any service charge goes directly to our team · please speak to a member of our team about any allergens before ordering",
+      "todo": "DEMO ONLY: copied from the Chapel's weekend specials to show how specials look. These are not the Lion's dishes."
+    }
+  ]
+}

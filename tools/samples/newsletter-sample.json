@@ -1,0 +1,16 @@
+{
+  "subject": "Two for one, live music and Sunday roast at the Lion",
+  "preheader": "This week's offers, what's on and how to book your table.",
+  "kicker": "This week at the Lion",
+  "headline": "Two for one, live music and Sunday roast.",
+  "intro": "Here's what's coming up at the Lion this week. Tables are filling for Sunday, so book early.",
+  "offers": [
+    { "title": "Two for one", "headline": "Two for one on wood-fired pizzas", "detail": "Thursday, 5:30pm to 8:30pm" }
+  ],
+  "menu_title": "Sunday roast menu",
+  "events": [
+    { "date": "2026-10-16", "title": "Live music", "time": "9pm", "note": "Band to be confirmed" },
+    { "date": "2026-10-18", "title": "Sunday roast", "time": "12pm to 6pm", "note": "Book ahead" }
+  ],
+  "cta_text": "Tables go quickly at the weekend."
+}

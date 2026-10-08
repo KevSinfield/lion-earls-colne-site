@@ -1,0 +1,6 @@
+.claude/
+tools/.venv/
+__pycache__/
+.DS_Store
+data/history/
+newsletter/

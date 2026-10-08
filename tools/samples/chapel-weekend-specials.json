@@ -1,0 +1,86 @@
+{
+  "id": "weekend-specials",
+  "venue": "The Chapel Inn Coggeshall",
+  "title": "Weekend Specials",
+  "subtitle": "Friday, Saturday & Sunday · 2–4 October 2026",
+  "valid_from": "2026-10-02",
+  "valid_to": "2026-10-04",
+  "intro": "A short seasonal selection from our kitchen, alongside our regular menu — available all weekend while stocks last.",
+  "sections": [
+    {
+      "name": "To Begin",
+      "items": [
+        {
+          "name": "Corn Ribs",
+          "price": 8.0,
+          "description": "Charred corn ribs, gochujang butter, crispy onions, sesame and lime.",
+          "tags": [],
+          "label": null
+        },
+        {
+          "name": "Crispy Squid Rings",
+          "price": 9.0,
+          "description": "Curried mayonnaise, pickled shallots and dressed leaf.",
+          "tags": [],
+          "label": null
+        }
+      ]
+    },
+    {
+      "name": "Big Plates",
+      "items": [
+        {
+          "name": "Gammon, Egg & Chips",
+          "price": 17.5,
+          "description": "Grilled gammon steak, crispy skin-on chips, fried free-range egg, grilled tomato and pineapple chutney.",
+          "tags": [],
+          "label": null
+        },
+        {
+          "name": "Gnocchi",
+          "price": 17.5,
+          "description": "Pan-fried potato gnocchi, roasted squash, wild mushrooms, spinach, sage butter and Parmesan.",
+          "tags": [
+            "vegetarian"
+          ],
+          "label": null
+        },
+        {
+          "name": "Luxury Fish Pie",
+          "price": 19.5,
+          "description": "Haddock, salmon and king prawns in a creamy white wine sauce, topped with buttery mashed potato and mature cheddar, baked until golden and served with seasonal greens.",
+          "tags": [],
+          "label": "Market fish · this weekend"
+        }
+      ]
+    }
+  ],
+  "offers": [
+    {
+      "title": "Lunchtime meal deal",
+      "headline": "£15 — lunch and a drink",
+      "detail": "Tuesday to Friday, 12pm to 2pm"
+    }
+  ],
+  "events": [
+    {
+      "title": "Sunday Roasts",
+      "date": null,
+      "recurs": "Sunday",
+      "time": "12pm to 4pm",
+      "note": "the best in Essex, reviewed by you. The people's choice."
+    },
+    {
+      "title": "Sunday Quiz",
+      "date": "2026-10-04",
+      "recurs": null,
+      "time": "7.30pm",
+      "note": null
+    }
+  ],
+  "notice": "100% of any service charge goes directly to our team · please speak to a member of our team about any allergens before ordering",
+  "source": {
+    "file": "chapel-weekend-specials.pdf",
+    "extracted_at": "2026-10-08T15:18:27"
+  }
+}

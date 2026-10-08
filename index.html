@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Lion, Earls Colne | Wood-fired Pizza, Tapas & Sunday Roast</title>
+<meta name="robots" content="noindex, nofollow"><!-- MOCK-UP: remove this line when the site goes live -->
+<meta name="description" content="The Lion, High Street, Earls Colne. Wood-fired pizza, tapas, Sunday roasts and live music, under new management.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="mock">Mock-up. Photos, prices and details to be confirmed.</div>
+
+<header class="nav" id="nav">
+  <div class="wrap nav__in">
+    <a class="logo" href="#top" aria-label="The Lion, Earls Colne"><img src="images/logo-light.png" alt="The Lion" width="500" height="500"></a>
+    <nav aria-label="Main">
+      <a href="#whats-on">What's on</a>
+      <a href="#eat">Eat &amp; drink</a>
+      <a href="#history">History</a>
+      <a href="#find">Find us</a>
+      <a class="btn btn--line" data-book href="#">Book a table</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="hero__bg" role="img" aria-label="The Lion on the High Street, Earls Colne"></div>
+    <div class="hero__wash"></div>
+    <div class="wrap hero__in">
+      <p class="status" id="status" aria-live="polite"><span class="dot"></span><span id="statusText"></span></p>
+      <p class="kicker">High Street &middot; Earls Colne</p>
+      <h1>Wood-fired pizza, tapas<br>&amp; <em>Sunday roasts.</em></h1>
+      <p class="hero__sub">A new chapter for the village inn. Eat, drink, enjoy.</p>
+    </div>
+
+    <div class="actions">
+      <div class="wrap actions__in">
+        <a class="act act--book" data-book href="#"><span class="act__l">Reserve</span><span class="act__t">Book a table</span></a>
+        <button class="act" data-menu type="button"><span class="act__l">Read</span><span class="act__t">The menu</span></button>
+        <a class="act" href="#whats-on"><span class="act__l">This week</span><span class="act__t">What's on</span></a>
+        <a class="act" href="#find"><span class="act__l">Visit</span><span class="act__t">Find us</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="eat" id="eat">
+    <div class="wrap">
+      <p class="kicker">Eat, Drink, Enjoy</p>
+      <h2>Good food, good drinks and a warm welcome.</h2>
+      <ul class="trio">
+        <li><span class="num">I</span><h3>Wood-fired pizza</h3><p>Fired to order in the wood-fired oven.</p></li>
+        <li><span class="num">II</span><h3>Tapas &amp; more</h3><p>Small plates to share at the bar or the table.</p></li>
+        <li><span class="num">III</span><h3>Sunday roast</h3><p>Locally reared beef, gammon, chicken and a proper veggie roast. Book ahead, it fills up.</p></li>
+      </ul>
+      <button class="link" data-menu type="button">Read the menu</button>
+    </div>
+  </section>
+
+  <section class="history" id="history">
+    <div class="wrap">
+      <p class="kicker">Our history</p>
+      <h2>A High Street landmark.</h2>
+      <p class="history__lead">A Grade II listed, timber-framed building on Earls Colne High Street, with parts dating back to the 14th century and a 17th-century rebuild. Part of it is thought to have started life as a market hall.</p>
+      <ul class="trio">
+        <li><span class="num">14th century</span><h3>The first walls</h3><p>The gabled cross-wing at one end, and a range alongside it that may once have been a market hall.</p></li>
+        <li><span class="num">17th century</span><h3>Rebuilt</h3><p>A two-storey rebuild on the site of an older open hall, with beams and posts you can still see inside.</p></li>
+        <li><span class="num">Today</span><h3>A new chapter</h3><p>Still Grade II listed, still on the High Street, and now open under new management.</p></li>
+      </ul>
+      <p class="history__src">Source: <a href="https://britishlistedbuildings.co.uk/101306203-the-lion-public-house-earls-colne" rel="noopener">Historic England listing, The Lion Public House</a></p>
+      <p class="todo">TODO: Craig to check. The old site's "1678" date couldn't be confirmed, so it's left out.</p>
+    </div>
+  </section>
+
+  <section class="week" id="whats-on">
+    <div class="wrap week__in">
+      <div class="week__head">
+        <p class="kicker kicker--dark">This week at the Lion</p>
+        <h2>A reason to come<br>back every week.</h2>
+        <p class="todo">TODO: Craig to confirm the weekly rhythm.</p>
+      </div>
+      <ol class="week__list" id="weekList"></ol>
+    </div>
+  </section>
+
+  <section class="join">
+    <div class="join__crest" aria-hidden="true"></div>
+    <div class="wrap join__in">
+      <p class="kicker">Never miss a good night</p>
+      <h2>Live music, specials<br>and what's on.</h2>
+      <p>One short message a week. Unsubscribe whenever you like.</p>
+      <form class="join__form js-join">
+        <label class="sr-only" for="joinEmail">Email address</label>
+        <input id="joinEmail" type="email" placeholder="Your email address" required>
+        <button class="btn btn--gold" type="submit">Keep me posted</button>
+        <p class="join__ok ok" hidden>Cheers. (Mock-up only, nothing has been saved.)</p>
+      </form>
+      <p class="join__fine">We'll only use your email for the Lion's weekly news. Unsubscribe any time.</p>
+    </div>
+  </section>
+
+  <section class="find" id="find">
+    <div class="wrap find__in">
+      <div>
+        <p class="kicker">Find us</p>
+        <h2>The Lion</h2>
+        <address id="addr"></address>
+        <p><a class="phone" id="phone" href="#"></a></p>
+        <p class="find__links"><a id="mapLink" href="#" rel="noopener">Get directions</a> <span aria-hidden="true">&middot;</span> <a id="fb" href="#" rel="noopener">Facebook</a></p>
+        <a class="btn btn--gold" data-book href="#">Book a table</a>
+      </div>
+      <div>
+        <h3 class="find__h">Opening hours</h3>
+        <table class="hours" id="hours"></table>
+        <p class="todo">TODO: confirm these are the standing hours.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__news">
+    <p class="foot__t">Get the week's specials and what's on</p>
+    <form class="foot__form js-join">
+      <label class="sr-only" for="footEmail">Email address</label>
+      <input id="footEmail" type="email" placeholder="Your email address" required>
+      <button class="btn btn--line" type="submit">Sign up</button>
+      <p class="ok" hidden>Cheers. (Mock-up only.)</p>
+    </form>
+  </div>
+  <div class="wrap foot__in">
+    <span>&copy; The Lion, Earls Colne</span>
+    <span>High Street, Earls Colne CO6 2PA</span>
+  </div>
+</footer>
+
+<div class="sticky" role="region" aria-label="Quick actions">
+  <a class="btn btn--gold" data-book href="#">Book a table</a>
+  <a class="btn btn--line" id="stickyCall" href="#find">Call us</a>
+</div>
+
+<div class="panel" id="panel" role="dialog" aria-modal="true" aria-labelledby="panelT" hidden>
+  <div class="panel__box">
+    <button class="panel__x" type="button" aria-label="Close menu">&times;</button>
+    <header class="mast">
+      <p class="mast__the" aria-hidden="true">The</p>
+      <h2 class="mast__lion" id="panelT" aria-label="The Lion, Earls Colne">Lion</h2>
+      <div class="mast__rule" aria-hidden="true"><span>&#9670;</span></div>
+      <p class="mast__box" aria-hidden="true">Earls Colne</p>
+    </header>
+    <div id="menuBody"></div>
+    <p class="panel__note">Please let a member of staff know if you have any dietary requirements.</p>
+    <a class="btn btn--gold" data-book href="#">Book a table</a>
+  </div>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
