@@ -19,7 +19,8 @@ Client project for Craig's pub (The Lion, High Street, Earls Colne CO6 2PA). Sta
 6. **One source of truth per thing:** menus in `data/menu.json`; hours, events, contact details in `js/data.js`. Don't copy them into other files.
 7. **No Chapel data in `data/menu.json`.** The demo tab of the Chapel's weekend specials was removed on 8 Oct 2026; don't add it back. Test with `tools/samples/` and a scratch copy of the menu file instead.
 8. **All "Book a table" links go through Stampede, nothing else.** Use the Lion's own Stampede link (not the Chapel's) in `bookingUrl` in `js/data.js` and `VENUE["book"]` in `tools/render_newsletter.py`. Until it exists they point to the Find us section. Never a `tel:` link on a Book button. (A plain phone number as contact info is fine.) Waiting on the Stampede set-up.
-9. **No em dashes in copy.** Write British.
+9. **Fonts:** headings use Playfair Display (Kev chose it on 27 Oct 2026; Cormorant made the digit 1 look like a capital I). Body is Inter. Full-height "lining" numbers are forced site-wide in `css/style.css` with `!important`, because the `font:` shorthand elsewhere resets them. Don't remove that rule. The newsletter stays on Georgia/Arial (web fonts don't work in email); check its numbers if they ever look off.
+10. **No em dashes in copy.** Write British.
 
 ## Layout
 
