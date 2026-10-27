@@ -25,6 +25,8 @@ Client project for Craig's pub (The Lion, High Street, Earls Colne CO6 2PA). Sta
 
 - `index.html`, `css/`, `js/`, `images/`: the site (`js/data.js` holds the editable facts)
 - `data/menu.json`: menus; past-dated ones hide themselves; `data/history/` is local backups, not committed
+- `menus.html`, `menu.html`, `whats-on.html`, `event.html` + `js/pages.js` + `css/pages.css`: mock-up of the menu picker and events pages (added 27 Oct 2026, private repo only, not on the public preview). They read `data/menu.json` plus **invented** `data/sample/*.json` (flagged SAMPLE). Add `?at=2026-10-30T18:00` to a URL to preview another date and time.
+- `docs/stampede-questions.md`: question list for the Stampede meeting
 - `tools/extract_menu.py`, `tools/render_newsletter.py`, `tools/samples/`: pipeline pieces and test data
 - `newsletter/`: generated previews, not committed
 
@@ -32,7 +34,7 @@ Client project for Craig's pub (The Lion, High Street, Earls Colne CO6 2PA). Sta
 
 Two repos, one folder:
 - `origin` = private working repo (`KevSinfield/lion-earls-colne`). Normal commits and pushes go here.
-- `public` = public copy (`KevSinfield/lion-earls-colne-site`), created 8 Oct 2026 from a history-free branch (`public-release`) so no old commits are exposed. Never push `main` to `public`. To update it, rebuild a history-free commit of the files you want public and push that, only when Kev says so. Check the tree for mailbox addresses and secrets first.
+- `public` = public copy (`KevSinfield/lion-earls-colne-site`), created 8 Oct 2026 from a history-free branch (`public-release`) so no old commits are exposed. Never push `main` itself to `public`. To update it, only when Kev says so: scan the tree for mailbox addresses and secrets, then make a commit of the current tree whose only parent is `public/main` (`git commit-tree <tree> -p public/main`) and push that as a normal fast-forward. If GitHub's Pages deploy fails with a 500, request a fresh build (`gh api -X POST repos/KevSinfield/lion-earls-colne-site/pages/builds`) rather than waiting.
 
 GitHub Pages is on for the public repo (turned on 8 Oct 2026): https://kevsinfield.github.io/lion-earls-colne-site/ (serves branch `main` of `public`, so it only changes when `public` is updated). It is a mock-up and `noindex`.
 

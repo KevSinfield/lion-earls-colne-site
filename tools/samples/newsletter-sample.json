@@ -1,16 +1,17 @@
 {
-  "subject": "Two for one, live music and Sunday roast at the Lion",
+  "subject": "2 for 1 pizzas, a Halloween disco and Sunday roast at the Lion",
   "preheader": "This week's offers, what's on and how to book your table.",
   "kicker": "This week at the Lion",
-  "headline": "Two for one, live music and Sunday roast.",
-  "intro": "Here's what's coming up at the Lion this week. Tables are filling for Sunday, so book early.",
+  "headline": "2 for 1 pizzas, a Halloween disco and Sunday roast.",
+  "intro": "Here's what's coming up at the Lion. Tables are filling for Sunday, so book early.",
   "offers": [
-    { "title": "Two for one", "headline": "Two for one on wood-fired pizzas", "detail": "Thursday, 5:30pm to 8:30pm" }
+    { "title": "Two for one", "headline": "2For1 pizzas every Wednesday", "detail": "Food served 5:30pm to 8:30pm" }
   ],
   "menu_title": "Sunday roast menu",
   "events": [
-    { "date": "2026-10-16", "title": "Live music", "time": "9pm", "note": "Band to be confirmed" },
-    { "date": "2026-10-18", "title": "Sunday roast", "time": "12pm to 6pm", "note": "Book ahead" }
+    { "date": "2026-10-31", "title": "Creepy Circus Halloween Disco", "time": "8:30pm", "note": "With DJ Beeber" },
+    { "date": "2026-11-14", "title": "Disco Bingo", "time": "9pm", "note": "£2 per card" },
+    { "date": "2026-11-25", "title": "Christmas Wreath Making", "time": "Evening", "note": "Materials and a drink included" }
   ],
   "cta_text": "Tables go quickly at the weekend."
 }

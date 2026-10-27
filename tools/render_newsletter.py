@@ -137,7 +137,7 @@ def render(content, menu, sample, menu_limit):
     if sample:
         parts.append(row(
             f'<p style="margin:0;padding:9px 0;text-align:center;font:bold 11px {SANS};letter-spacing:1px;'
-            f'color:#fff;">SAMPLE CONTENT: the offers and events below are made up to show the layout</p>',
+            f'color:#fff;">PREVIEW ONLY: layout test, not a live newsletter</p>',
             bg="#a33", pad="0 16px"))
     # Masthead: live text, so it never depends on images loading (same style as the printed menu)
     parts.append(row(masthead(), pad="38px 36px 26px"))

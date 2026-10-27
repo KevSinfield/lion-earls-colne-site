@@ -1,0 +1,99 @@
+{
+  "_note": "Events for the mock-up. Weekly nights and the three dated events (31 Oct, 14 Nov, 25 Nov) come from the Lion's Facebook page (27 Oct 2026). Entries marked sample:true are invented to show a fuller calendar.",
+  "events": [
+    {
+      "id": "poker-night",
+      "title": "Poker Night",
+      "type": "poker",
+      "recurs": "Tuesday",
+      "time": "From 7:30pm",
+      "poster": "poker",
+      "blurb": "Weekly poker night, run with Redtooth Poker. The kitchen is closed on Tuesdays, so it's drinks only.",
+      "todo": "TODO: confirm how to join in and whether there's a cost."
+    },
+    {
+      "id": "two-for-one-pizza",
+      "title": "2For1 Pizzas",
+      "type": "food",
+      "recurs": "Wednesday",
+      "time": "Food 5:30pm to 8:30pm",
+      "poster": "pizza",
+      "blurb": "Two for one on our wood-fired pizzas, every Wednesday evening.",
+      "menu_id": "wood-fired-pizza"
+    },
+    {
+      "id": "tapas-friday",
+      "title": "Tapas Friday",
+      "type": "food",
+      "recurs": "Friday",
+      "time": "5:30pm to 8:30pm",
+      "poster": "tapas",
+      "blurb": "Small plates to share, every Friday evening.",
+      "menu_id": "tapas-friday",
+      "todo": "TODO: confirm Tapas Friday times (read from a small menu image)."
+    },
+    {
+      "id": "sunday-roast",
+      "title": "Sunday Roast",
+      "type": "food",
+      "recurs": "Sunday",
+      "time": "12pm to 5pm",
+      "blurb": "Locally reared beef, gammon, chicken and a proper veggie roast. Book ahead, it fills up.",
+      "menu_id": "sunday-menu"
+    },
+    {
+      "id": "halloween-disco",
+      "title": "Creepy Circus Halloween Disco",
+      "type": "party",
+      "date": "2026-10-31",
+      "time": "8:30pm",
+      "poster": "circus",
+      "featured": true,
+      "blurb": "A creepy circus-themed Halloween night with music, drinks and plenty of spooky fun, with DJ Beeber.",
+      "details": ["Music and dancing with DJ Beeber", "Creepy circus theme", "Free entry", "Dress to scare"],
+      "todo": "TODO: check free entry and dress code against the poster."
+    },
+    {
+      "id": "live-music-6-nov",
+      "sample": true,
+      "title": "Live Music",
+      "type": "music",
+      "date": "2026-11-06",
+      "time": "9pm",
+      "note": "Band to be confirmed",
+      "blurb": "A Friday night with a live band. Food is served before the music starts."
+    },
+    {
+      "id": "disco-bingo",
+      "title": "Disco Bingo",
+      "type": "party",
+      "date": "2026-11-14",
+      "time": "9pm",
+      "price": "£2 per card",
+      "poster": "disco",
+      "blurb": "A fun twist on classic bingo, with music, laughs and a great atmosphere all evening.",
+      "details": ["Music, laughs and prizes", "£2 per card"]
+    },
+    {
+      "id": "karaoke-20-nov",
+      "sample": true,
+      "title": "Karaoke Night",
+      "type": "music",
+      "date": "2026-11-20",
+      "time": "9pm",
+      "note": "With DJ Michael",
+      "blurb": "Grab the mic. A previous karaoke night was hosted by DJ Michael."
+    },
+    {
+      "id": "wreath-making",
+      "title": "Christmas Wreath Making",
+      "type": "workshop",
+      "date": "2026-11-25",
+      "time": "Evening",
+      "poster": "wreath",
+      "blurb": "Get festive with a relaxed wreath-making evening, complete with all materials, a drink and some seasonal treats.",
+      "details": ["All materials included", "A drink included", "Seasonal treats"],
+      "todo": "TODO: start time, price and how to book (the Lion says more details are coming)."
+    }
+  ]
+}
