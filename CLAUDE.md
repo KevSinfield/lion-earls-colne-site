@@ -4,7 +4,7 @@ Client project for Craig's pub (The Lion, High Street, Earls Colne CO6 2PA). Sta
 
 ## Run it
 
-- Preview the site: `python3 -m http.server 8765` from this folder, then open http://localhost:8765 (the menu panel loads JSON, so opening the file directly won't work).
+- Preview the site: serve this folder over http (the menu panel loads JSON, so opening the file directly won't work), e.g. `python3 -m http.server 8765`, then open http://localhost:8765. The plain Python server lets the browser cache old scripts; if a change doesn't show, serve with a no-cache header instead.
 - Menu extractor tests: `tools/.venv/bin/python -m unittest discover -s tools -v`
 - Newsletter preview: `python3 tools/render_newsletter.py --content tools/samples/newsletter-sample.json --sample --out newsletter/preview.html`
 - Add a menu: `tools/.venv/bin/python tools/extract_menu.py MENU.pdf --expect-venue Lion --merge data/menu.json`
@@ -24,6 +24,7 @@ Client project for Craig's pub (The Lion, High Street, Earls Colne CO6 2PA). Sta
 ## Layout
 
 - `index.html`, `css/`, `js/`, `images/`: the site (`js/data.js` holds the editable facts)
+- `js/bar.js`: the one solid sticky header bar used on every page (built into `<header id="chrome-head" data-active="...">`). About 100px on desktop, shrinks on scroll, slim 64px with a menu drawer on phones. Edit the nav links here, nowhere else. Added 27 Oct 2026 (private repo only until Kev says push it live).
 - `data/menu.json`: menus; past-dated ones hide themselves; `data/history/` is local backups, not committed
 - `menus.html`, `menu.html`, `whats-on.html`, `event.html` + `js/pages.js` + `css/pages.css`: mock-up of the menu picker and events pages (added 27 Oct 2026, private repo only, not on the public preview). They read `data/menu.json` plus **invented** `data/sample/*.json` (flagged SAMPLE). Add `?at=2026-10-30T18:00` to a URL to preview another date and time.
 - `docs/stampede-questions.md`: question list for the Stampede meeting

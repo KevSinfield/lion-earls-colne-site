@@ -57,23 +57,13 @@
 
   /* ---------- shared header and footer ---------- */
   function chrome(active) {
-    var links = [["index.html", "Home", "home"], ["menus.html", "Menus", "menus"], ["whats-on.html", "What's on", "events"], ["index.html#find", "Find us", "find"]];
-    var h = $("#chrome-head");
-    h.className = "pnav";
-    var inner = el("div", "wrap pnav__in");
-    var logo = el("a", "plogo"); logo.href = "index.html";
-    logo.innerHTML = '<img src="images/logo-light.png" alt="The Lion, Earls Colne" width="500" height="500">';
-    var nav = el("nav");
-    links.forEach(function (l) {
-      var a = el("a", l[2] === active ? "on" : "", l[1]); a.href = l[0]; nav.appendChild(a);
-    });
-    var b = el("a", "btn btn--line", "Book a table"); b.setAttribute("data-book", ""); nav.appendChild(b);
-    inner.appendChild(logo); inner.appendChild(nav); h.appendChild(inner);
-
     var f = $("#chrome-foot");
     f.className = "foot";
     f.innerHTML = '<div class="wrap foot__in"><span>&copy; The Lion, Earls Colne</span><span>' + (D.address || "") + "</span></div>";
 
+    var sb = el("div", "sticky show");
+    sb.innerHTML = '<a class="btn btn--gold" data-book href="#">Book a table</a><a class="btn btn--line" href="tel:' + (D.phone || "").replace(/\s/g, "") + '">Call us</a>';
+    document.body.appendChild(sb);
     document.querySelectorAll("[data-book]").forEach(function (a) {
       if (D.bookingUrl) { a.href = D.bookingUrl; a.rel = "noopener"; }
       else { a.href = "index.html#find"; a.title = "Online booking coming soon"; }

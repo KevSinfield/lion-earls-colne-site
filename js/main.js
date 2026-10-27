@@ -146,10 +146,7 @@
   panel.addEventListener("click", function (e) { if (e.target === panel) closePanel(); });
   document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !panel.hidden) closePanel(); });
 
-  // Nav goes solid after the top of the hero; sticky bar after the action row
-  var nav = $("#nav");
-  function onScroll() { nav.classList.toggle("solid", window.scrollY > 40); }
-  window.addEventListener("scroll", onScroll, { passive: true }); onScroll();
+  // Sticky bottom bar (phones) appears once the hero actions have scrolled away
   if ("IntersectionObserver" in window) {
     new IntersectionObserver(function (e) { $(".sticky").classList.toggle("show", !e[0].isIntersecting); }).observe($(".actions"));
   } else { $(".sticky").classList.add("show"); }
