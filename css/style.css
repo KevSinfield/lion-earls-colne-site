@@ -164,7 +164,6 @@ a.link { display: inline-block; text-decoration: none; }
 
 /* Join */
 .join { position: relative; padding: clamp(4.5rem, 10vw, 7.5rem) 0; text-align: center; overflow: hidden; }
-.join__crest { position: absolute; inset: 0; background: url("../images/crest-light.png") center / min(640px, 90vw) no-repeat; opacity: .07; }
 .join__in { position: relative; }
 .join p { color: var(--mute); margin-top: 1rem; }
 .join__form { display: flex; flex-wrap: wrap; justify-content: center; gap: .8rem; margin-top: 2rem; }
@@ -312,3 +311,7 @@ address { font-style: normal; color: var(--mute); margin: 1rem 0 .4rem; }
   .soon__grid, .soon__grid--1 { grid-template-columns: minmax(0, 420px); justify-content: center; gap: 1.8rem; }
   .soon__card h3 { font-size: 1.4rem; }
 }
+
+/* The Lion's crest (the crowned lion in a ruff) as a cream seal above the sign-up. Cut from the logo, wording removed. */
+.join__seal { width: 150px; height: 150px; border-radius: 50%; background: var(--bone); display: grid; place-items: center; margin: 0 auto 1.6rem; box-shadow: 0 0 0 4px var(--bitumen), 0 0 0 5px rgba(199,154,75,.6); }
+.join__seal img { height: 106px; width: auto; mix-blend-mode: multiply; }
