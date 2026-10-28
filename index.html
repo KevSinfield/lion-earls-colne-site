@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=20261028123251">
+<link rel="stylesheet" href="css/style.css?v=20261028124040">
 </head>
 <body>
 
@@ -125,20 +125,24 @@
   </section>
 
   <section class="find" id="find">
-    <div class="wrap find__in">
-      <div>
-        <p class="kicker">Find us</p>
+    <div class="find__map">
+      <a class="find__mapimg" id="mapOpen" href="#" rel="noopener" aria-label="Open the Lion's location in Google Maps">
+        <img src="images/map.jpg" alt="A map of Earls Colne with a pin on the Lion, on the High Street" width="1400" height="1100" loading="lazy">
+      </a>
+      <p class="find__credit">Map &copy; <a href="https://www.openstreetmap.org/copyright" rel="noopener">OpenStreetMap contributors</a></p>
+      <div class="find__card">
+        <p class="kicker kicker--dark">Find us</p>
         <h2>The Lion</h2>
         <address id="addr"></address>
         <p><a class="phone" id="phone" href="#"></a></p>
         <p class="find__links"><a id="mapLink" href="#" rel="noopener">Get directions</a> <span aria-hidden="true">&middot;</span> <a id="fb" href="#" rel="noopener">Facebook</a></p>
         <a class="btn btn--gold" data-book href="#">Book a table</a>
       </div>
-      <div>
-        <h3 class="find__h">Opening hours</h3>
-        <table class="hours" id="hours"></table>
-        <p class="todo">TODO: confirm these are the standing hours.</p>
-      </div>
+    </div>
+    <div class="find__hours">
+      <h3 class="find__h">Opening hours</h3>
+      <table class="hours" id="hours"></table>
+      <p class="todo">TODO: confirm these are the standing hours.</p>
     </div>
   </section>
 </main>
@@ -170,8 +174,8 @@
   </div>
 </div>
 
-<script src="js/data.js?v=20261028123251"></script>
-<script src="js/bar.js?v=20261028123251"></script>
-<script src="js/main.js?v=20261028123251"></script>
+<script src="js/data.js?v=20261028124040"></script>
+<script src="js/bar.js?v=20261028124040"></script>
+<script src="js/main.js?v=20261028124040"></script>
 </body>
 </html>

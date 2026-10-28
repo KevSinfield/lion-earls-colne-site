@@ -14,6 +14,7 @@
   $("#addr").textContent = D.address;
   $("#fb").href = D.facebook;
   $("#mapLink").href = D.mapsUrl;
+  $("#mapOpen").href = D.mapsUrl;
   var ph = $("#phone");
   ph.textContent = D.phone;
   ph.href = "tel:" + D.phone.replace(/\s/g, "");
