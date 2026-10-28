@@ -79,17 +79,45 @@
     if (text) n.textContent = text;
     return n;
   }
+  function servedNow(m) {
+    var now = new Date(), t = now.getHours() + now.getMinutes() / 60, d = now.getDay();
+    return (m.served || []).some(function (w) { return (w.days || []).indexOf(d) > -1 && t >= w.from && t < w.to; });
+  }
+  // Dated menus (this week's specials) first, then whatever is being served right now, then the rest in file order.
   function liveMenus(menus, today) {
+    function rank(m) { return m.valid_to ? 0 : servedNow(m) ? 1 : 2; }
     return menus.filter(function (m) { return !m.valid_to || m.valid_to >= today; })
-      .sort(function (a, b) { return (a.valid_to ? 0 : 1) - (b.valid_to ? 0 : 1); });
+      .sort(function (a, b) { return rank(a) - rank(b); });
   }
   function renderMenu(m) {
     var box = el("div", "menu");
     box.appendChild(el("h3", "menu__title", m.title.replace(/\s*\(demo\)$/i, "")));
     if (m.subtitle) box.appendChild(el("p", "menu__sub", m.subtitle));
     if (m.intro) box.appendChild(el("p", "menu__intro", m.intro));
+    var acts = el("div", "menu__acts");
+    if (m.pdf) {
+      var dl = el("a", "btn btn--line btn--sm", "Download PDF");
+      dl.href = m.pdf; dl.setAttribute("download", "");
+      acts.appendChild(dl);
+    }
+    var full = el("a", "menu__full", "Open full page");
+    full.href = "menu.html?id=" + encodeURIComponent(m.id);
+    acts.appendChild(full);
+    box.appendChild(acts);
+    var jump = null;
+    if (m.sections.length > 2) {
+      jump = el("div", "menu__jump");
+      box.appendChild(jump);
+    }
     m.sections.forEach(function (s) {
-      box.appendChild(el("h3", null, s.name));
+      var h = el("h3", null, s.name);
+      box.appendChild(h);
+      if (jump) {
+        var j = el("button", null, s.name.replace(/^Our /, ""));
+        j.type = "button";
+        j.addEventListener("click", function () { h.scrollIntoView({ behavior: "smooth", block: "start" }); });
+        jump.appendChild(j);
+      }
       if (s.note) box.appendChild(el("p", "menu__note", s.note));
       s.items.forEach(function (it) {
         var row = el("div", "dish");
@@ -119,23 +147,46 @@
     var body = $("#menuBody"), live = liveMenus(menus, today);
     body.textContent = "";
     if (!live.length) { body.appendChild(el("p", null, "Menu coming soon. Give us a call on " + D.phone + ".")); return; }
-    var tabs = el("div", "tabs"), shown = [];
+    var tabs = el("div", "tabs"), shown = [], btns = [], cur = 0;
+    tabs.setAttribute("role", "tablist");
+    function select(i, focus) {
+      cur = (i + live.length) % live.length;
+      shown.forEach(function (p, k) { p.hidden = k !== cur; });
+      btns.forEach(function (t, k) { t.classList.toggle("on", k === cur); t.setAttribute("aria-selected", k === cur ? "true" : "false"); t.tabIndex = k === cur ? 0 : -1; });
+      tabs.scrollLeft = btns[cur].offsetLeft - (tabs.clientWidth - btns[cur].offsetWidth) / 2;
+      if (focus) btns[cur].focus();
+      var box = body.closest(".panel__box"); if (box) box.scrollTop = 0;
+    }
     live.forEach(function (m, i) {
       var pane = renderMenu(m); pane.hidden = i > 0; shown.push(pane);
-      var tab = el("button", "tab" + (i === 0 ? " on" : ""), m.title);
-      tab.type = "button";
-      tab.addEventListener("click", function () {
-        shown.forEach(function (p, k) { p.hidden = k !== i; });
-        tabs.querySelectorAll(".tab").forEach(function (t, k) { t.classList.toggle("on", k === i); });
+      var tab = el("button", "tab" + (servedNow(m) ? " tab--now" : ""), m.title);
+      tab.type = "button"; tab.setAttribute("role", "tab");
+      tab.addEventListener("click", function () { select(i); });
+      tab.addEventListener("keydown", function (e) {
+        if (e.key === "ArrowRight") { e.preventDefault(); select(cur + 1, true); }
+        else if (e.key === "ArrowLeft") { e.preventDefault(); select(cur - 1, true); }
       });
-      tabs.appendChild(tab);
+      btns.push(tab); tabs.appendChild(tab);
     });
-    if (live.length > 1) body.appendChild(tabs);
+    if (live.length > 1) {
+      body.appendChild(tabs);
+      // Swipe left or right on a phone to move to the next or previous menu
+      var x0 = null, y0 = null;
+      body.addEventListener("touchstart", function (e) { x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; }, { passive: true });
+      body.addEventListener("touchend", function (e) {
+        if (x0 === null) return;
+        var dx = e.changedTouches[0].clientX - x0, dy = e.changedTouches[0].clientY - y0;
+        x0 = null;
+        if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.5) select(cur + (dx < 0 ? 1 : -1));
+      }, { passive: true });
+      body.appendChild(el("p", "menu__hint", "Swipe or use the tabs to see the other menus."));
+    }
     shown.forEach(function (p) { body.appendChild(p); });
+    if (live.length > 1) select(0);
   }
   window.LION_renderMenus = renderMenus; // exposed so the date rules can be tested
   var todayISO = new Date().toISOString().slice(0, 10);
-  fetch("data/menu.json").then(function (r) { return r.json(); })
+  fetch("data/menu.json", { cache: "no-cache" }).then(function (r) { return r.json(); })
     .then(function (d) { renderMenus(d.menus, todayISO); })
     .catch(function () { $("#menuBody").textContent = "Menu coming soon. Give us a call on " + D.phone + "."; });
   var panel = $("#panel"), opener = null;

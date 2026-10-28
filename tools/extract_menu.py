@@ -18,6 +18,8 @@ from pathlib import Path
 
 from pypdf import PdfReader
 
+import menu_check
+
 MONTHS = ["january", "february", "march", "april", "may", "june", "july",
           "august", "september", "october", "november", "december"]
 MONTH_RE = "|".join(m.capitalize() for m in MONTHS) + "|" + "|".join(m[:3].capitalize() for m in MONTHS)
@@ -254,11 +256,15 @@ def main(argv=None):
     ap.add_argument("--merge", type=Path, help="upsert into this menu file (replaces same id)")
     ap.add_argument("--expect-venue", help="refuse unless the menu header contains this word (e.g. Lion)")
     ap.add_argument("--id", help="override the menu id")
-    ap.add_argument("--force", action="store_true", help="skip the venue check")
+    ap.add_argument("--expect-dishes", type=int, help="control total: how many dishes YOU count on the printed menu")
+    ap.add_argument("--allow-source", action="append", default=[], help="a printed line we deliberately don't keep, e.g. a marketing blurb")
+    ap.add_argument("--accept", action="append", default=[], help="a word you have checked against the printed menu")
+    ap.add_argument("--force", action="store_true", help="skip the venue check and the completeness check")
     args = ap.parse_args(argv)
 
     try:
-        menu, warnings = parse(read_lines(args.pdf))
+        lines = read_lines(args.pdf)
+        menu, warnings = parse(lines)
         if args.expect_venue and not args.force and args.expect_venue.lower() not in menu["venue"].lower():
             raise MenuError(f"This menu says '{menu['venue']}', not '{args.expect_venue}'. "
                             "Not merging. Use --force only if you're sure.")
@@ -272,6 +278,15 @@ def main(argv=None):
     print(preview(menu))
     for w in warnings:
         print(f"  WARNING: {w}", file=sys.stderr)
+
+    # Double check: nothing printed on the PDF may be missing from the menu, and nothing in the menu may be invented.
+    check = menu_check.check([lines], menu, lenient=True, include_extras=True,
+                             expect_dishes=args.expect_dishes, accept=args.accept, allow_source=args.allow_source)
+    print("\nCOMPLETENESS CHECK\n" + menu_check.report(check))
+    if not check["ok"] and not args.force:
+        print("STOPPED: the menu does not match the PDF exactly. Nothing was written. Fix the PDF or the parser, "
+              "or use --force only if you have checked it by hand.", file=sys.stderr)
+        return 3
     if args.out:
         args.out.write_text(json.dumps(menu, indent=2, ensure_ascii=False) + "\n")
         print(f"\nWrote {args.out}")

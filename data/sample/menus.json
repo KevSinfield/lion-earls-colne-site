@@ -6,7 +6,15 @@
       "kind": "regular",
       "blurb": "Locally reared roasts with all the trimmings. Book ahead, it fills up.",
       "served_text": "Sundays, 12pm to 5pm",
-      "served": [{ "days": [0], "from": 12, "to": 17 }],
+      "served": [
+        {
+          "days": [
+            0
+          ],
+          "from": 12,
+          "to": 17
+        }
+      ],
       "pdf": null
     },
     {
@@ -15,81 +23,71 @@
       "kind": "regular",
       "blurb": "Small plates to share, every Friday evening.",
       "served_text": "Fridays, 5:30pm to 8:30pm",
-      "served": [{ "days": [5], "from": 17.5, "to": 20.5 }],
+      "served": [
+        {
+          "days": [
+            5
+          ],
+          "from": 17.5,
+          "to": 20.5
+        }
+      ],
       "sections": [
-        { "name": "Our Tapas", "items": [
-          { "name": "Albondigas", "price": null, "description": "", "tags": [] },
-          { "name": "Chorizo al Vino", "price": null, "description": "", "tags": [] },
-          { "name": "Pan con Tomate", "price": null, "description": "", "tags": [] },
-          { "name": "Berenjenas y Miel", "price": null, "description": "", "tags": [] },
-          { "name": "Gambas al Ajillo", "price": null, "description": "", "tags": [] },
-          { "name": "Patatas Bravas", "price": null, "description": "", "tags": [] },
-          { "name": "Anchoas sobre Tostada", "price": null, "description": "", "tags": [] },
-          { "name": "Calamares a la Andaluza", "price": null, "description": "", "tags": [] }
-        ]}
+        {
+          "name": "Our Tapas",
+          "items": [
+            {
+              "name": "Albondigas",
+              "price": null,
+              "description": "",
+              "tags": []
+            },
+            {
+              "name": "Chorizo al Vino",
+              "price": null,
+              "description": "",
+              "tags": []
+            },
+            {
+              "name": "Pan con Tomate",
+              "price": null,
+              "description": "",
+              "tags": []
+            },
+            {
+              "name": "Berenjenas y Miel",
+              "price": null,
+              "description": "",
+              "tags": []
+            },
+            {
+              "name": "Gambas al Ajillo",
+              "price": null,
+              "description": "",
+              "tags": []
+            },
+            {
+              "name": "Patatas Bravas",
+              "price": null,
+              "description": "",
+              "tags": []
+            },
+            {
+              "name": "Anchoas sobre Tostada",
+              "price": null,
+              "description": "",
+              "tags": []
+            },
+            {
+              "name": "Calamares a la Andaluza",
+              "price": null,
+              "description": "",
+              "tags": []
+            }
+          ]
+        }
       ],
       "footnote": "Dish names from the Lion's Tapas Friday menu. Prices and descriptions to come."
-    },
-    {
-      "id": "wood-fired-pizza",
-      "sample": true,
-      "title": "Wood-fired Pizza",
-      "kind": "regular",
-      "blurb": "Fired to order in the wood-fired oven. Two for one on Wednesdays.",
-      "served_text": "Wed 5:30 to 8:30pm. Thu to Sat, lunch and evening",
-      "served": [
-        { "days": [3], "from": 17.5, "to": 20.5 },
-        { "days": [4, 5, 6], "from": 12.5, "to": 14.5 },
-        { "days": [4, 5, 6], "from": 17.5, "to": 20.5 }
-      ],
-      "offers": [{ "title": "Two for one", "headline": "2For1 pizzas every Wednesday", "detail": "Food served 5:30pm to 8:30pm" }],
-      "sections": [
-        { "name": "Pizzas", "items": [
-          { "name": "Margherita", "price": 10.0, "description": "Tomato, mozzarella, basil.", "tags": ["vegetarian"] },
-          { "name": "Pepperoni", "price": 12.5, "description": "Tomato, mozzarella, pepperoni.", "tags": [] },
-          { "name": "Garden", "price": 12.0, "description": "Roasted peppers, mushroom, red onion, rocket.", "tags": ["vegan"] },
-          { "name": "Burrata & Prosciutto", "price": 14.0, "description": "Burrata, prosciutto, rocket.", "tags": [] }
-        ]}
-      ],
-      "footnote": "Sample dishes and prices."
-    },
-    {
-      "id": "small-plates",
-      "sample": true,
-      "title": "Small Plates",
-      "kind": "regular",
-      "blurb": "Starters and sharing plates.",
-      "served_text": "Thu to Sat, lunch and evening",
-      "served": [
-        { "days": [4, 5, 6], "from": 12.5, "to": 14.5 },
-        { "days": [4, 5, 6], "from": 17.5, "to": 20.5 }
-      ],
-      "sections": [
-        { "name": "Small Plates", "items": [
-          { "name": "Marinated Olives", "price": 4.5, "description": "Garlic, orange peel.", "tags": ["vegan", "gluten free"] },
-          { "name": "Crispy Calamari", "price": 8.0, "description": "Lemon aioli.", "tags": [] }
-        ]}
-      ],
-      "footnote": "Sample dishes and prices."
-    },
-    {
-      "id": "pub-classics",
-      "sample": true,
-      "title": "Pub Classics",
-      "kind": "regular",
-      "blurb": "Familiar favourites, with wood-fired ciabatta.",
-      "served_text": "Thu to Sat, lunch and evening",
-      "served": [
-        { "days": [4, 5, 6], "from": 12.5, "to": 14.5 },
-        { "days": [4, 5, 6], "from": 17.5, "to": 20.5 }
-      ],
-      "sections": [
-        { "name": "Classics", "items": [
-          { "name": "Fish & Chips", "price": 15.5, "description": "Mushy peas, tartare sauce.", "tags": [] },
-          { "name": "Wood-fired Ciabatta", "price": 9.0, "description": "Fillings change weekly.", "tags": [] }
-        ]}
-      ],
-      "footnote": "Sample dishes and prices."
     }
   ]
 }

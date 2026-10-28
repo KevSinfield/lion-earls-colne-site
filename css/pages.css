@@ -125,3 +125,37 @@
   .einfo > div:first-child { border-top: 0; }
   .paper .btn--ghost { margin-left: 0; }
 }
+
+/* Light theme for the inner pages (28 Oct 2026), to match the lighter home page. The dark rules above were written
+   with the colour variables, so re-pointing the variables inside .page turns the whole page light. Posters stay dark. */
+.page { --bone: #1e1513; --mute: #5d5046; --line: rgba(30,21,19,.2); --gold: #8a6424; --gold-b: #8a6424;
+  background: var(--cream); color: var(--ink); }
+.page .poster, .page .feature .poster { --bone: #ede4d4; --mute: rgba(237,228,212,.7); --gold: #c79a4b; --gold-b: #e3c288; --line: rgba(199,154,75,.38); color: #ede4d4; }
+.page .btn--gold { background: #c79a4b; border-color: #c79a4b; color: #171310; }
+.page .btn--gold:hover { background: #e3c288; border-color: #e3c288; }
+.page .btn--ghost { border-color: rgba(30,21,19,.4); color: var(--ink); }
+.page .btn--ghost:hover { border-color: var(--gold); color: var(--gold); }
+.page .chip { color: var(--ink); border-color: rgba(30,21,19,.3); }
+.page .chip:hover { border-color: var(--gold); }
+.page .chip.on { background: var(--bitumen); color: #f3ead8; border-color: var(--bitumen); }
+.page .paper { background: var(--paper); border: 1px solid var(--sand); }
+.page .mcard { background: var(--paper); border-color: var(--sand); }
+.page .mcard:hover { background: #fff; border-color: var(--gold); }
+.page .wk { background: var(--paper); border-color: var(--sand); }
+.page .feature { background: var(--paper); border-color: var(--sand); }
+.page .ev--themed { background: rgba(181,131,52,.1); border-bottom-color: rgba(138,100,36,.35); }
+.page .ev__d, .page .einfo, .page .einfo > div { border-color: rgba(30,21,19,.2); }
+.page .tag--themed { color: var(--gold); border-color: var(--gold); }
+.page .tag--special { color: #a5502e; border-color: #a5502e; }
+.page .tag--sample { color: #a5502e; border-color: #a5502e; }
+.page .menu__foot--page { color: var(--mute); }
+.page .todo { color: #a5502e; }
+.page h1, .page h2, .page h3, .page h4 { color: var(--ink); }
+.page .paper h3 { color: var(--ink); }
+.page .evlink { background: var(--paper); border-color: var(--gold); }
+.page .backlink { color: var(--gold); }
+.page .mhead__s { color: var(--gold); }
+.page .poster__t, .page .poster__d, .page .poster__m { color: inherit; }
+.page .poster__d { color: #e3c288; }
+.page .poster__m { color: rgba(237,228,212,.7); }
+.page .poster h1, .page .poster h2, .page .poster h3 { color: #ede4d4; }

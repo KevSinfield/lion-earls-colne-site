@@ -1,6 +1,289 @@
 {
   "menus": [
     {
+      "id": "main-menu",
+      "venue": "The Lion Earls Colne",
+      "title": "Main Menu",
+      "subtitle": "Small plates, wood-fired pizza and pub classics",
+      "kind": "regular",
+      "blurb": "Small plates, wood-fired pizza, pub classics and wood-fired ciabatta.",
+      "served_text": "Wed 5:30 to 8:30pm. Thu to Sat, lunch and evening",
+      "served": [
+        {
+          "days": [
+            3
+          ],
+          "from": 17.5,
+          "to": 20.5
+        },
+        {
+          "days": [
+            4,
+            5,
+            6
+          ],
+          "from": 12.5,
+          "to": 14.5
+        },
+        {
+          "days": [
+            4,
+            5,
+            6
+          ],
+          "from": 17.5,
+          "to": 20.5
+        }
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "intro": null,
+      "pdf": "menus/main-menu.pdf",
+      "sections": [
+        {
+          "name": "Small Plates",
+          "note": "Perfect for sharing or starting your meal.",
+          "items": [
+            {
+              "name": "Gambas Pil Pil",
+              "price": null,
+              "description": "King prawns cooked in garlic and chilli butter, served with toasted sourdough.",
+              "tags": [],
+              "label": null
+            },
+            {
+              "name": "Halloumi Bites",
+              "price": null,
+              "description": "Crispy halloumi tossed in hot honey and paprika salt.",
+              "tags": [
+                "vegetarian"
+              ],
+              "label": null
+            },
+            {
+              "name": "Southern Fried Chicken Goujons",
+              "price": null,
+              "description": "Tossed in your choice of Buffalo or BBQ sauce.",
+              "tags": [],
+              "label": null
+            },
+            {
+              "name": "Roasted Red Pepper & Hummus",
+              "price": null,
+              "description": "Smooth hummus topped with roasted red peppers, olive oil and paprika, served with toasted sourdough.",
+              "tags": [
+                "vegan"
+              ],
+              "label": null
+            },
+            {
+              "name": "Albóndigas",
+              "price": null,
+              "description": "Spanish-style meatballs in homemade tomato sauce, finished with Parmesan.",
+              "tags": [],
+              "label": null
+            }
+          ]
+        },
+        {
+          "name": "Our Pizzas",
+          "note": "All our pizzas are hand-stretched and cooked in our wood-fired oven. Gluten-free bases available on request.",
+          "items": [
+            {
+              "name": "The Matador",
+              "price": null,
+              "description": "Tomato base and mozzarella, loaded with pepperoni, roast chicken, Italian salami, chorizo and fresh chillies, finished with a drizzle of hot honey.",
+              "tags": [],
+              "label": null
+            },
+            {
+              "name": "Pepperoni",
+              "price": null,
+              "description": "Classic tomato base and mozzarella, topped with sliced pepperoni.",
+              "tags": [],
+              "label": null
+            },
+            {
+              "name": "Margherita",
+              "price": null,
+              "description": "Rich tomato sauce, mozzarella, fresh basil and a drizzle of extra virgin olive oil.",
+              "tags": [
+                "vegetarian"
+              ],
+              "label": null
+            },
+            {
+              "name": "Prosciutto e Funghi",
+              "price": null,
+              "description": "Classic tomato base, mozzarella, sliced Italian cooked ham and earthy mushrooms.",
+              "tags": [],
+              "label": null
+            },
+            {
+              "name": "Verdura Classica",
+              "price": null,
+              "description": "Tomato base, mozzarella, roasted peppers, red onion, mushrooms and black olives.",
+              "tags": [
+                "vegetarian"
+              ],
+              "label": null
+            },
+            {
+              "name": "Pollo e Pesto",
+              "price": null,
+              "description": "Tomato base, mozzarella, roast chicken breast, aromatic green basil pesto and red onion.",
+              "tags": [],
+              "label": null
+            },
+            {
+              "name": "Gambas al Ajillo",
+              "price": null,
+              "description": "Garlic and olive oil white base, mozzarella, juicy king prawns, red chilli flakes and fresh parsley.",
+              "tags": [],
+              "label": null
+            },
+            {
+              "name": "Prosciutto e Rucola",
+              "price": null,
+              "description": "Crispy mozzarella base topped with torn fresh burrata, fine Serrano ham, peppery rocket and extra virgin olive oil.",
+              "tags": [],
+              "label": null
+            }
+          ]
+        },
+        {
+          "name": "Pub Classics",
+          "note": "Honest, hearty favourites, done properly.",
+          "items": [
+            {
+              "name": "Ham, Egg & Chips",
+              "price": null,
+              "description": "Home-cooked ham, two free-range eggs and chunky chips.",
+              "tags": [],
+              "label": null
+            },
+            {
+              "name": "Beer-Battered Haddock & Chips",
+              "price": null,
+              "description": "Beer-battered haddock with chunky chips, buttered peas and homemade tartare sauce.",
+              "tags": [],
+              "label": null
+            },
+            {
+              "name": "Pie of the Week",
+              "price": null,
+              "description": "Chef's pie of the week, ask your server. Served with mash or chunky chips, seasonal veg and gravy.",
+              "tags": [],
+              "label": null
+            },
+            {
+              "name": "Scampi & Chips",
+              "price": null,
+              "description": "Breaded scampi with chunky chips, buttered peas and homemade tartare sauce.",
+              "tags": [],
+              "label": null
+            },
+            {
+              "name": "The Lion Burger",
+              "price": null,
+              "description": "Two 3oz British beef patties with chorizo mayo, mozzarella, lettuce and tomato. Served with fries and house slaw.",
+              "tags": [],
+              "label": null
+            }
+          ]
+        },
+        {
+          "name": "Wood-Fired Ciabatta",
+          "note": "All toasted in our wood-fired oven and served with skin-on fries.",
+          "items": [
+            {
+              "name": "Atlantic King Prawn Cocktail",
+              "price": null,
+              "description": null,
+              "tags": [],
+              "label": null
+            },
+            {
+              "name": "Classic Chicken Caesar",
+              "price": null,
+              "description": null,
+              "tags": [],
+              "label": null
+            },
+            {
+              "name": "Halloumi, Roasted Red Pepper & Hot Honey",
+              "price": null,
+              "description": null,
+              "tags": [
+                "vegetarian"
+              ],
+              "label": null
+            },
+            {
+              "name": "Posh Fish Finger with Homemade Tartare Sauce",
+              "price": null,
+              "description": null,
+              "tags": [],
+              "label": null
+            },
+            {
+              "name": "Falafel & Hummus",
+              "price": null,
+              "description": null,
+              "tags": [
+                "vegan"
+              ],
+              "label": null
+            },
+            {
+              "name": "Chicken & Bacon Club",
+              "price": null,
+              "description": null,
+              "tags": [],
+              "label": null
+            }
+          ]
+        },
+        {
+          "name": "Irresistible Extras",
+          "note": null,
+          "items": [
+            {
+              "name": "Wood-Fired Garlic Cheesy Bread",
+              "price": null,
+              "description": "Garlic butter, mozzarella and fresh parsley.",
+              "tags": [],
+              "label": null
+            },
+            {
+              "name": "Skin-on Fries",
+              "price": null,
+              "description": null,
+              "tags": [],
+              "label": null
+            },
+            {
+              "name": "Sauces",
+              "price": null,
+              "description": "Chef's House Dip (sweet mustard & garlic mayo), Chipotle Mayo, BBQ Sauce.",
+              "tags": [],
+              "label": null
+            }
+          ]
+        }
+      ],
+      "offers": [
+        {
+          "title": "Two for one",
+          "headline": "2For1 pizzas every Wednesday",
+          "detail": "Food served 5:30pm to 8:30pm"
+        }
+      ],
+      "events": [],
+      "footnote": "Please let a member of staff know if you have any dietary requirements.",
+      "todo": "TODO: prices are not on the menu pictures we have, so none are shown. Add them (or swap in the Lion's own PDF) and confirm when the full menu is served. Dishes copied from the Lion's Facebook menu pictures."
+    },
+    {
       "id": "sunday-menu",
       "venue": "The Lion Earls Colne",
       "title": "Sunday Menu",
@@ -155,7 +438,19 @@
       "offers": [],
       "events": [],
       "footnote": "Please let a member of staff know if you have any dietary requirements.",
-      "todo": "TODO: confirm these are the current prices. Taken from the Lion's 2 October menu post."
+      "todo": "TODO: confirm these are the current prices. Taken from the Lion's 2 October menu post.",
+      "served": [
+        {
+          "days": [
+            0
+          ],
+          "from": 12,
+          "to": 17
+        }
+      ],
+      "served_text": "Sundays, 12pm to 5pm",
+      "kind": "regular",
+      "blurb": "Locally reared roasts with all the trimmings. Book ahead, it fills up."
     }
   ]
 }

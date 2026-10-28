@@ -4,3 +4,4 @@ __pycache__/
 .DS_Store
 data/history/
 newsletter/
+tools/.ocr_image

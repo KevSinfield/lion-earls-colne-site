@@ -31,7 +31,7 @@
   function dayLabel(s) { var d = fromISO(s); return DAYS[d.getDay()].slice(0, 3) + " " + d.getDate() + " " + MONTHS[d.getMonth()].slice(0, 3); }
 
   /* ---------- data ---------- */
-  function getJSON(u) { return fetch(u).then(function (r) { if (!r.ok) throw new Error(u); return r.json(); }); }
+  function getJSON(u) { return fetch(u, { cache: "no-cache" }).then(function (r) { if (!r.ok) throw new Error(u); return r.json(); }); }
   function loadAll() {
     return Promise.all([getJSON("data/menu.json"), getJSON("data/sample/menus.json"), getJSON("data/sample/events.json")])
       .then(function (a) {
@@ -148,12 +148,13 @@
 
     var paper = el("div", "paper");
     var bar = el("div", "paper__bar");
-    var dchips = el("div", "chips chips--dark");
-    bar.appendChild(el("span", "paper__lab", "Show"));
-    bar.appendChild(dchips);
-    var pdf = el("span", "btn btn--ghost btn--sm is-off", "Download PDF (coming)");
-    bar.appendChild(pdf);
-    paper.appendChild(bar);
+    if (m.pdf) {
+      var pdf = el("a", "btn btn--ghost btn--sm", "Download PDF");
+      pdf.href = m.pdf; pdf.setAttribute("download", "");
+      bar.appendChild(pdf);
+    }
+    if (!bar.children.length) bar = null;
+    if (bar) paper.appendChild(bar);
 
     (m.offers || []).forEach(function (o) {
       var b = el("div", "offer");
@@ -167,19 +168,11 @@
     if (m.footnote) paper.appendChild(el("p", "menu__foot", m.footnote));
     box.appendChild(paper);
 
-    function pass(it, f) {
-      var t = it.tags || [];
-      if (f === "vegetarian") return t.indexOf("vegetarian") > -1 || t.indexOf("vegan") > -1;
-      if (f === "vegan") return t.indexOf("vegan") > -1;
-      if (f === "gluten free") return t.indexOf("gluten free") > -1;
-      return true;
-    }
-    function draw(f) {
+    function draw() {
       body.textContent = "";
       var shown = 0;
       m.sections.forEach(function (s) {
-        var items = s.items.filter(function (i) { return pass(i, f); });
-        if (!items.length) return;
+        var items = s.items;
         body.appendChild(el("h3", null, s.name));
         if (s.note) body.appendChild(el("p", "menu__note", s.note));
         items.forEach(function (it) {
@@ -195,10 +188,8 @@
           body.appendChild(row);
         });
       });
-      if (!shown) body.appendChild(el("p", "menu__note", "Nothing on this menu matches. Try another filter."));
     }
-    chips(dchips, [["", "Everything"], ["vegetarian", "Vegetarian"], ["vegan", "Vegan"], ["gluten free", "Gluten free"]], draw);
-    draw("");
+    draw();
     box.appendChild(el("p", "menu__foot menu__foot--page", "Please let a member of staff know if you have any dietary requirements."));
   }
 
