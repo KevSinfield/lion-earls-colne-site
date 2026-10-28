@@ -163,14 +163,6 @@ a.link { display: inline-block; text-decoration: none; }
 .wk__n { font-size: .88rem; color: rgba(23,19,16,.65); text-align: right; }
 
 /* Join */
-.join { position: relative; padding: clamp(4.5rem, 10vw, 7.5rem) 0; text-align: center; overflow: hidden; }
-.join__in { position: relative; }
-.join p { color: var(--mute); margin-top: 1rem; }
-.join__form { display: flex; flex-wrap: wrap; justify-content: center; gap: .8rem; margin-top: 2rem; }
-.join__form input { flex: 0 1 340px; padding: 1rem 1.2rem; background: transparent; border: 1px solid var(--line); color: var(--bone); font: 1rem var(--sans); }
-.join__form input::placeholder { color: rgba(237,228,212,.45); }
-.join__ok { flex-basis: 100%; color: var(--gold-b) !important; margin: 0 !important; }
-.join p.join__fine { font-size: .78rem; margin-top: 1rem; opacity: .75; }
 
 /* Find */
 .find { padding: clamp(4.5rem, 10vw, 7.5rem) 0; background: var(--oak); }
@@ -305,11 +297,7 @@ address { font-style: normal; color: var(--mute); margin: 1rem 0 .4rem; }
   .soon__card h3 { font-size: 1.4rem; }
 }
 
-/* The Lion's crest (the crowned lion in a ruff) as a cream seal above the sign-up. Cut from the logo, wording removed. */
-.join__seal { width: 150px; height: 150px; border-radius: 50%; background: var(--bone); display: grid; place-items: center; margin: 0 auto 1.6rem; box-shadow: 0 0 0 4px var(--bitumen), 0 0 0 5px rgba(199,154,75,.6); }
-.join__seal img { height: 106px; width: auto; mix-blend-mode: multiply; }
 
-.join__fine a, .foot__in a { color: inherit; text-underline-offset: 3px; }
 
 /* Today's row in the opening hours */
 .hours tr.is-today { background: rgba(199,154,75,.14); }
@@ -319,4 +307,33 @@ address { font-style: normal; color: var(--mute); margin: 1rem 0 .4rem; }
 .hours__today { display: inline-block; margin-left: .6rem; font: 500 .56rem var(--sans); letter-spacing: .16em; text-transform: uppercase; background: var(--gold); color: var(--bitumen); padding: .14rem .45rem; vertical-align: middle; }
 .soon__card h3 { text-decoration: underline; text-decoration-color: transparent; text-underline-offset: 5px; transition: text-decoration-color .2s; }
 .soon__card:hover h3 { text-decoration-color: var(--gold-d); }
-.join__in > p:not(.kicker):not(.join__fine) { max-width: 34rem; margin-left: auto; margin-right: auto; }
+
+/* Newsletter sign-up as an "admit one" style ticket on deep red (sign-up concept 4, 28 Oct 2026). The stub says "First to know".
+   The crest is cut from the Lion's logo, wording removed. */
+.join { padding: clamp(3rem, 7vw, 5rem) 0; background: radial-gradient(90% 120% at 50% 0%, #7a2a1f, #3d130d 70%); }
+.ticket { display: grid; grid-template-columns: 190px 1fr; max-width: 860px; margin: 0 auto; background: var(--bone); color: var(--ink); text-align: left; filter: drop-shadow(0 18px 30px rgba(0,0,0,.45));
+  -webkit-mask: radial-gradient(circle 16px at 0 50%, transparent 98%, #000) left / 51% 100% no-repeat, radial-gradient(circle 16px at 100% 50%, transparent 98%, #000) right / 51% 100% no-repeat;
+  mask: radial-gradient(circle 16px at 0 50%, transparent 98%, #000) left / 51% 100% no-repeat, radial-gradient(circle 16px at 100% 50%, transparent 98%, #000) right / 51% 100% no-repeat; }
+.ticket__stub { border-right: 2px dashed rgba(30,21,19,.35); padding: 1.6rem 1rem; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .8rem; background: var(--bone-2); }
+.ticket__stub img { height: 96px; width: auto; mix-blend-mode: multiply; }
+.ticket__stub b { font: 500 .6rem var(--sans); letter-spacing: .28em; text-transform: uppercase; color: var(--gold-d); }
+.ticket__stub span { font: 400 1.5rem/1.05 var(--serif); }
+.ticket__main { padding: clamp(1.6rem, 4vw, 2.6rem); }
+.ticket__main .kicker { margin-bottom: .6rem; }
+.ticket__main h2 { font-size: clamp(1.6rem, 3vw, 2.3rem); }
+.ticket__main > p:not(.kicker) { margin-top: .7rem; color: #5d5046; }
+.join__form { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 1.3rem; }
+.join__form input { flex: 1 1 220px; max-width: 340px; padding: 1rem 1.2rem; background: #fff; border: 1px solid rgba(30,21,19,.35); color: var(--ink); font: 1rem var(--sans); }
+.join__form input::placeholder { color: rgba(30,21,19,.5); }
+.join .btn--gold { background: #8c3b2a; border-color: #8c3b2a; color: #fff; }
+.join .btn--gold:hover { background: #a24632; border-color: #a24632; }
+.join__ok { flex-basis: 100%; color: #2d5a36; margin: 0; }
+.join__fine { text-align: center; margin-top: 1.4rem; font-size: .78rem; color: rgba(243,234,216,.75); }
+.join__fine a { color: inherit; text-underline-offset: 3px; }
+@media (max-width: 880px) {
+  .ticket { grid-template-columns: 1fr; -webkit-mask: none; mask: none; }
+  .ticket__stub { border-right: 0; border-bottom: 2px dashed rgba(30,21,19,.35); flex-direction: row; justify-content: center; padding: 1rem; }
+  .ticket__stub img { height: 64px; }
+  .ticket__stub b { display: none; }
+  .ticket__stub span { font-size: 1.4rem; }
+}
