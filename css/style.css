@@ -315,3 +315,6 @@ address { font-style: normal; color: var(--mute); margin: 1rem 0 .4rem; }
 /* The Lion's crest (the crowned lion in a ruff) as a cream seal above the sign-up. Cut from the logo, wording removed. */
 .join__seal { width: 150px; height: 150px; border-radius: 50%; background: var(--bone); display: grid; place-items: center; margin: 0 auto 1.6rem; box-shadow: 0 0 0 4px var(--bitumen), 0 0 0 5px rgba(199,154,75,.6); }
 .join__seal img { height: 106px; width: auto; mix-blend-mode: multiply; }
+
+.join__fine a, .foot__in a, .foot__p { color: inherit; text-underline-offset: 3px; }
+.foot__p { display: block; font-size: .72rem; opacity: .7; margin-top: .2rem; }
