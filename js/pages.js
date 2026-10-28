@@ -199,6 +199,12 @@
       .sort(function (a, b) { return a.date < b.date ? -1 : 1; });
   }
   function posterEl(e, big) {
+    if (e.image) {  // a real poster or photo beats the drawn one
+      var q = el("div", "poster poster--img" + (big ? " poster--big" : ""));
+      var im = el("img"); im.src = e.image; im.alt = e.image_alt || e.title; im.loading = "lazy";
+      q.appendChild(im);
+      return q;
+    }
     var p = el("div", "poster poster--" + (e.poster || "plain") + (big ? " poster--big" : ""));
     if (e.date) p.appendChild(el("span", "poster__d", dayLabel(e.date)));
     p.appendChild(el("span", "poster__t", e.title));

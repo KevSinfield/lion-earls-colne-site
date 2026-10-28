@@ -291,6 +291,11 @@ def main(argv=None):
         args.out.write_text(json.dumps(menu, indent=2, ensure_ascii=False) + "\n")
         print(f"\nWrote {args.out}")
     if args.merge:
+        # Keep the Lion's own PDF for the Download PDF button: menus/<id>.pdf next to the data folder
+        menus_dir = args.merge.resolve().parent.parent / "menus"
+        menus_dir.mkdir(exist_ok=True)
+        shutil.copy2(args.pdf, menus_dir / f"{menu['id']}.pdf")
+        menu["pdf"] = f"menus/{menu['id']}.pdf"
         upsert(menu, args.merge)
         print(f"\nMerged into {args.merge} as '{menu['id']}'")
     return 0

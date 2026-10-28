@@ -159,3 +159,10 @@
 .page .poster__d { color: #e3c288; }
 .page .poster__m { color: rgba(237,228,212,.7); }
 .page .poster h1, .page .poster h2, .page .poster h3 { color: #ede4d4; }
+
+/* Real event posters and photos (square). Falls back to the drawn posters above when an event has no image. */
+.poster--img { padding: 0; border: 0; background: none; display: block; aspect-ratio: auto; overflow: hidden; }
+.poster--img img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block; }
+.event .poster--img.poster--big, .poster--img.poster--big { aspect-ratio: auto; }
+.event .poster--img { max-width: 560px; }
+.feature .poster--img { max-width: 520px; }

@@ -9,7 +9,9 @@
       "time": "From 7:30pm",
       "poster": "poker",
       "blurb": "Weekly poker night, run with Redtooth Poker. The kitchen is closed on Tuesdays, so it's drinks only.",
-      "todo": "TODO: confirm how to join in and whether there's a cost."
+      "todo": "TODO: confirm how to join in and whether there's a cost.",
+      "image": "images/events/poker-night.jpg",
+      "image_alt": "Poker Night poster: play here on Tuesday"
     },
     {
       "id": "two-for-one-pizza",
@@ -19,7 +21,9 @@
       "time": "Food 5:30pm to 8:30pm",
       "poster": "pizza",
       "blurb": "Two for one on our wood-fired pizzas, every Wednesday evening.",
-      "menu_id": "main-menu"
+      "menu_id": "main-menu",
+      "image": "images/pizza.jpg",
+      "image_alt": "A wood-fired pizza topped with burrata, Parma ham and rocket"
     },
     {
       "id": "tapas-friday",
@@ -39,7 +43,9 @@
       "recurs": "Sunday",
       "time": "12pm to 5pm",
       "blurb": "Locally reared beef, gammon, chicken and a proper veggie roast. Book ahead, it fills up.",
-      "menu_id": "sunday-menu"
+      "menu_id": "sunday-menu",
+      "image": "images/roast.jpg",
+      "image_alt": "Sunday roast beef with Yorkshire pudding, gravy and a glass of red wine"
     },
     {
       "id": "halloween-disco",
@@ -50,8 +56,15 @@
       "poster": "circus",
       "featured": true,
       "blurb": "A creepy circus-themed Halloween night with music, drinks and plenty of spooky fun, with DJ Beeber.",
-      "details": ["Music and dancing with DJ Beeber", "Creepy circus theme", "Free entry", "Dress to scare"],
-      "todo": "TODO: check free entry and dress code against the poster."
+      "details": [
+        "Music and dancing with DJ Beeber",
+        "Creepy circus theme",
+        "Free entry",
+        "Dress to scare"
+      ],
+      "todo": "TODO: check free entry and dress code against the poster.",
+      "image": "images/events/halloween-disco.jpg",
+      "image_alt": "The Creepy Circus Halloween Disco poster: Saturday 31st October, 8:30pm, free entry, dress to scare, with DJ Beeber"
     },
     {
       "id": "live-music-6-nov",
@@ -72,7 +85,12 @@
       "price": "£2 per card",
       "poster": "disco",
       "blurb": "A fun twist on classic bingo, with music, laughs and a great atmosphere all evening.",
-      "details": ["Music, laughs and prizes", "£2 per card"]
+      "details": [
+        "Music, laughs and prizes",
+        "£2 per card"
+      ],
+      "image": "images/events/disco-bingo.jpg",
+      "image_alt": "Disco Bingo poster: Saturday 14th November, 9pm, £2 per card"
     },
     {
       "id": "karaoke-20-nov",
@@ -92,7 +110,11 @@
       "time": "Evening",
       "poster": "wreath",
       "blurb": "Get festive with a relaxed wreath-making evening, complete with all materials, a drink and some seasonal treats.",
-      "details": ["All materials included", "A drink included", "Seasonal treats"],
+      "details": [
+        "All materials included",
+        "A drink included",
+        "Seasonal treats"
+      ],
       "todo": "TODO: start time, price and how to book (the Lion says more details are coming)."
     }
   ]
