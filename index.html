@@ -39,17 +39,35 @@
     </div>
   </section>
 
-  <section class="eat" id="eat">
-    <div class="wrap">
-      <p class="kicker">Eat, Drink, Enjoy</p>
-      <h2>Good food, good drinks and a warm welcome.</h2>
-      <ul class="trio">
-        <li><span class="num">I</span><h3>Wood-fired pizza</h3><p>Fired to order in the wood-fired oven.</p></li>
-        <li><span class="num">II</span><h3>Tapas &amp; more</h3><p>Small plates to share at the bar or the table.</p></li>
-        <li><span class="num">III</span><h3>Sunday roast</h3><p>Locally reared beef, gammon, chicken and a proper veggie roast. Book ahead, it fills up.</p></li>
-      </ul>
-      <button class="link" data-menu type="button">Read the menu</button>
-    </div>
+  <section class="bands" id="eat" aria-label="Food, drink and what's on">
+    <article class="band">
+      <div class="ph ph--img" style="background-image:url(images/pizza.jpg);background-position:center 55%" role="img" aria-label="A wood-fired pizza topped with burrata, Parma ham and rocket"></div>
+      <div class="band__txt">
+        <p class="kicker kicker--dark">Pizza &amp; tapas</p>
+        <h2>Fired to order.</h2>
+        <p>Wood-fired pizza from the oven, and small plates to share at the bar or the table. 2For1 pizzas on Wednesdays, tapas on Fridays.</p>
+        <button class="link link--dark" data-menu type="button">Read the menu</button>
+      </div>
+    </article>
+    <article class="band">
+      <div class="ph ph--img" style="background-image:url(images/roast.jpg);background-position:center 65%" role="img" aria-label="Sunday roast beef with a Yorkshire pudding, gravy and a glass of red wine"></div>
+      <div class="band__txt">
+        <p class="kicker kicker--dark">Sunday</p>
+        <h2>The proper roast.</h2>
+        <p>Locally reared beef, gammon, chicken and a proper veggie roast. Book ahead, it fills up.</p>
+        <a class="link link--dark" data-book href="#">Book a table</a>
+      </div>
+    </article>
+    <article class="band" id="whats-on">
+      <div class="ph ph--img" style="background-image:url(images/poker-night.jpg);background-position:center 40%" role="img" aria-label="Poker night at the Lion, players around an orange poker table under the old beams"></div>
+      <div class="band__txt">
+        <p class="kicker kicker--dark">This week at the Lion</p>
+        <h2>A reason to come back every week.</h2>
+        <ol class="week__list" id="weekList"></ol>
+        <a class="link link--dark" href="whats-on.html">See everything that's on</a>
+        <p class="todo">TODO: Craig to confirm the weekly rhythm.</p>
+      </div>
+    </article>
   </section>
 
   <section class="history" id="history">
@@ -64,17 +82,6 @@
       </ul>
       <p class="history__src">Source: <a href="https://britishlistedbuildings.co.uk/101306203-the-lion-public-house-earls-colne" rel="noopener">Historic England listing, The Lion Public House</a></p>
       <p class="todo">TODO: Craig to check. The old site's "1678" date couldn't be confirmed, so it's left out.</p>
-    </div>
-  </section>
-
-  <section class="week" id="whats-on">
-    <div class="wrap week__in">
-      <div class="week__head">
-        <p class="kicker kicker--dark">This week at the Lion</p>
-        <h2>A reason to come<br>back every week.</h2>
-        <p class="todo">TODO: Craig to confirm the weekly rhythm.</p>
-      </div>
-      <ol class="week__list" id="weekList"></ol>
     </div>
   </section>
 

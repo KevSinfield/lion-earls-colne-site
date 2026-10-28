@@ -4,7 +4,7 @@
     python3 tools/render_newsletter.py --content tools/samples/newsletter-sample.json --sample --out newsletter/preview.html
 
 Email clients are far more limited than browsers, so this uses table layout, inline styles,
-web-safe fonts (Georgia/Arial) and a text masthead, so it needs no images. Menu dishes come from data/menu.json,
+web-safe fonts (Times New Roman/Arial) and a text masthead, so it needs no images. Menu dishes come from data/menu.json,
 offers and events from the content file. Nothing is sent: this only writes an HTML file.
 Brevo's unsubscribe tag is swapped in when the campaign is created (see UNSUBSCRIBE).
 """
@@ -29,7 +29,7 @@ UNSUBSCRIBE = "[[UNSUBSCRIBE_URL]]"  # TODO: replace with Brevo's unsubscribe ta
 BG, PANEL, INK = "#e7dcc6", "#f8f2e4", "#1e1513"      # page, card, text
 GOLD, MUTE, LINE = "#8a6424", "#6b5f55", "#d9cdb4"     # accent text, secondary text, hairlines
 DARK = "#171310"                                      # offer box and button
-SERIF = "Georgia, 'Times New Roman', serif"
+SERIF = "'Times New Roman', Times, serif"  # Georgia has old-style numbers (1 looks like I); Times has lining ones
 SANS = "Arial, Helvetica, sans-serif"
 
 
