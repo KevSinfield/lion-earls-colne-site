@@ -2,11 +2,11 @@
    Source: the Lion's Facebook page (posts and graphics, 2 to 27 Oct 2026). */
 window.LION = {
   name: "The Lion",
-  address: "High Street, Earls Colne, Essex CO6 2PA",
+  address: "High Street, Earls Colne, Essex CO6\u00a02PA",
   mapsUrl: "https://www.google.com/maps/search/?api=1&query=The+Lion+High+Street+Earls+Colne+CO6+2PA",
   phone: "01206 911385",
-  email: "TODO",                        // Facebook shows both emma@ and andy@thelionearlscolne.com. Confirm which
-  bookingUrl: "",   // TODO: the Lion's OWN Stampede link (not the Chapel's). All "Book a table" links must go through Stampede, never tel:. Empty = buttons point to #find until it exists.
+  email: "TODO",                        // Facebook shows two different mailboxes. Confirm which one the Lion wants shown
+  bookingUrl: "",   // TODO: the Lion's OWN Stampede link. All "Book a table" links must go through Stampede, never tel:. Empty = buttons point to #find until it exists.
   facebook: "https://www.facebook.com/profile.php?id=61594219600168",
 
   // From the Lion's "Updated opening hours" Facebook post of 15 Oct 2026 (supersedes the 2 Oct graphic).

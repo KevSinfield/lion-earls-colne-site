@@ -5,6 +5,13 @@
   var host = document.getElementById("chrome-head");
   if (!host) return;
   host.className = "bar";
+  var mainEl = document.querySelector("main");
+  if (mainEl) {  // "Skip to content" for keyboard users
+    if (!mainEl.id) mainEl.id = "main-content";
+    var skip = document.createElement("a");
+    skip.className = "skip"; skip.href = "#" + mainEl.id; skip.textContent = "Skip to content";
+    document.body.insertBefore(skip, document.body.firstChild);
+  }
   var active = host.getAttribute("data-active") || "";
   var links = [
     ["menus.html", "Menus", "menus"],
