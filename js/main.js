@@ -88,21 +88,23 @@
     }
     if (!picks.length) return;
     var grid = $("#soonGrid");
+    grid.className = "soon__grid soon__grid--" + picks.length;
+    $("#soonSub").textContent = !dated.length ? "On every week at the Lion." : picks.length > 1 && picks[1].e.date ? "Two nights to put in the diary." : "Next up at the Lion.";
     picks.forEach(function (x) {
       var a = document.createElement("a");
       a.className = "soon__card"; a.href = "event.html?id=" + encodeURIComponent(x.e.id);
-      var pic = document.createElement(x.e.image ? "img" : "div");
-      if (x.e.image) { pic.src = x.e.image; pic.alt = x.e.image_alt || x.e.title; pic.loading = "lazy"; }
-      else { pic.className = "soon__noimg"; pic.textContent = x.e.title; }
-      var box = document.createElement("div");
-      var w = document.createElement("span"); w.className = "soon__when"; w.textContent = x.line;
-      box.appendChild(w);
+      var pic = document.createElement("div"); pic.className = "soon__pic";
+      if (x.e.image) {
+        var im = document.createElement("img"); im.src = x.e.image; im.alt = x.e.image_alt || x.e.title; im.loading = "lazy"; pic.appendChild(im);
+      } else {
+        var ph = document.createElement("div"); ph.className = "soon__noimg"; ph.textContent = x.e.title; pic.appendChild(ph);
+      }
       var chip = inDays(x.n);
-      if (chip && x.n <= 7) { var c = document.createElement("span"); c.className = "soon__chip"; c.textContent = x.n === 0 && x.e.recurs ? "Tonight" : chip; box.appendChild(c); }
-      var h = document.createElement("h3"); h.textContent = x.e.title; box.appendChild(h);
-      if (x.e.blurb) { var pp = document.createElement("p"); pp.textContent = x.e.blurb.length > 90 ? x.e.blurb.slice(0, 87).replace(/\s+\S*$/, "") + "..." : x.e.blurb; box.appendChild(pp); }
-      var m = document.createElement("span"); m.className = "soon__more"; m.textContent = "See the night"; box.appendChild(m);
-      a.appendChild(pic); a.appendChild(box); grid.appendChild(a);
+      if (chip && x.n <= 7) { var c = document.createElement("span"); c.className = "soon__chip"; c.textContent = x.n === 0 && x.e.recurs ? "Tonight" : chip; pic.appendChild(c); }
+      var w = document.createElement("span"); w.className = "soon__when"; w.textContent = x.line;
+      var h = document.createElement("h3"); h.textContent = x.e.title;
+      var m = document.createElement("span"); m.className = "soon__more"; m.textContent = "See the night";
+      a.appendChild(pic); a.appendChild(w); a.appendChild(h); a.appendChild(m); grid.appendChild(a);
     });
     $("#soon").hidden = false;
   }
