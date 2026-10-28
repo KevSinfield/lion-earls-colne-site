@@ -338,14 +338,14 @@ address { font-style: normal; color: var(--mute); margin: 1rem 0 .4rem; }
   .ticket__stub span { font-size: 1.4rem; }
 }
 
-/* "Our history" opens with a wide photo of the building that melts into the cream above and below (28 Oct 2026, Kev's choice B with a soft bleed).
-   The photo is only a Street View grab for now: swap images/lion-frontage.jpg or the .strip__bg url for a proper shot of the timbers. */
-.history--photo { padding-top: clamp(1.4rem, 3vw, 2.4rem); }
-.strip { position: relative; min-height: clamp(280px, 38vw, 380px); display: flex; align-items: center; margin-bottom: clamp(1.6rem, 4vw, 3rem); text-align: left; }
-.strip__bg { position: absolute; inset: 0; background: #2b2118 url("../images/lion-frontage.jpg") center 42% / cover;
-  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 24%, #000 68%, transparent 100%);
-  mask-image: linear-gradient(to bottom, transparent 0, #000 24%, #000 68%, transparent 100%); }
-.strip__bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(23,19,16,.88), rgba(23,19,16,.4) 68%, rgba(23,19,16,.12)); }
+/* "Our history" opens with a wide photo of the building with a clean edge at the top that melts into the cream at the bottom only (28 Oct 2026, Kev's choice B with a soft bleed).
+   The photo is a crop of the Lion's Facebook cover photo (images/lion-front.jpg): the pargeted plasterwork and the painted Bar & Dining lettering. Swap the .strip__bg url if we get a better one. */
+.history--photo { padding-top: 0; }
+.strip { position: relative; min-height: clamp(290px, 40vw, 410px); display: flex; align-items: center; margin-bottom: clamp(1.6rem, 4vw, 3rem); text-align: left; }
+.strip__bg { position: absolute; inset: 0; background: #2b2118 url("../images/lion-front.jpg") center 74% / cover;
+  -webkit-mask-image: linear-gradient(to bottom, #000 0, #000 72%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 0, #000 72%, transparent 100%); }
+.strip__bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(23,19,16,.9), rgba(23,19,16,.55) 45%, rgba(23,19,16,.12) 85%); }
 .strip__in { position: relative; width: 100%; padding-top: 1rem; }
 .strip .kicker { color: var(--gold-b); }
 .strip h2 { color: #f3ead8; font-size: clamp(2rem, 4.4vw, 3.4rem); line-height: 1.08; max-width: 14ch; }
