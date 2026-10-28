@@ -1,0 +1,25 @@
+{
+  "_note": "Invented events (layout testing only). NEVER copy into data/sample/events.json: the public site must show real Lion events only.",
+  "events": [
+    {
+      "id": "live-music-6-nov",
+      "sample": true,
+      "title": "Live Music",
+      "type": "music",
+      "date": "2026-11-06",
+      "time": "9pm",
+      "note": "Band to be confirmed",
+      "blurb": "A Friday night with a live band. Food is served before the music starts."
+    },
+    {
+      "id": "karaoke-20-nov",
+      "sample": true,
+      "title": "Karaoke Night",
+      "type": "music",
+      "date": "2026-11-20",
+      "time": "9pm",
+      "note": "With DJ Michael",
+      "blurb": "Grab the mic. A previous karaoke night was hosted by DJ Michael."
+    }
+  ]
+}

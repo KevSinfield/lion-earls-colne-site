@@ -23,7 +23,8 @@
       "blurb": "Two for one on our wood-fired pizzas, every Wednesday evening.",
       "menu_id": "main-menu",
       "image": "images/pizza.jpg",
-      "image_alt": "A wood-fired pizza topped with burrata, Parma ham and rocket"
+      "image_alt": "A wood-fired pizza topped with burrata, Parma ham and rocket",
+      "menu_section": "Our Pizzas"
     },
     {
       "id": "tapas-friday",
@@ -68,16 +69,6 @@
       "short": "Halloween Disco"
     },
     {
-      "id": "live-music-6-nov",
-      "sample": true,
-      "title": "Live Music",
-      "type": "music",
-      "date": "2026-11-06",
-      "time": "9pm",
-      "note": "Band to be confirmed",
-      "blurb": "A Friday night with a live band. Food is served before the music starts."
-    },
-    {
       "id": "disco-bingo",
       "title": "Disco Bingo",
       "type": "party",
@@ -92,16 +83,6 @@
       ],
       "image": "images/events/disco-bingo.jpg",
       "image_alt": "Disco Bingo poster: Saturday 14th November, 9pm, £2 per card"
-    },
-    {
-      "id": "karaoke-20-nov",
-      "sample": true,
-      "title": "Karaoke Night",
-      "type": "music",
-      "date": "2026-11-20",
-      "time": "9pm",
-      "note": "With DJ Michael",
-      "blurb": "Grab the mic. A previous karaoke night was hosted by DJ Michael."
     },
     {
       "id": "wreath-making",

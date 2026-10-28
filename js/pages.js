@@ -88,6 +88,10 @@
       container.appendChild(b);
     });
   }
+  function describe(text) {  // meta description for pages built from data
+    var m = $('meta[name="description"]');
+    if (m && text) m.setAttribute("content", text);
+  }
   function sampleTag() { return el("span", "tag tag--sample", "Sample"); }
 
   /* ---------- menus.html ---------- */
@@ -125,8 +129,9 @@
   function menuPage(data) {
     var m = data.byId[param("id")];
     var box = $("#menu");
-    if (!m) { box.appendChild(el("p", null, "Menu not found.")); return; }
+    if (!m) { box.appendChild(el("h1", "title", "Menu not found")); box.appendChild(el("p", null, "We couldn't find that menu. Have a look at all the menus.")); return; }
     document.title = m.title + " | The Lion, Earls Colne";
+    describe(m.blurb || m.subtitle);
     var ev = m.event_id ? data.evById[m.event_id] : null;
 
     var head = el("div", "mhead");
@@ -288,7 +293,10 @@
       });
       if (!any) list.appendChild(el("p", "menu__note", "Nothing coming up for this filter."));
     }
-    chips($("#chips"), [["all", "Everything"], ["party", "Party nights"], ["music", "Live music"], ["workshop", "Workshops"]], function (v) { cur = v; draw(); });
+    var TYPES = [["party", "Party nights"], ["music", "Live music"], ["workshop", "Workshops"]].filter(function (t) {
+      return upcoming.some(function (e) { return e.type === t[0]; });
+    });
+    if (TYPES.length > 1) chips($("#chips"), [["all", "Everything"]].concat(TYPES), function (v) { cur = v; draw(); });
     draw();
   }
 
@@ -321,8 +329,10 @@
 
   function eventPage(data) {
     var e = data.evById[param("id")], box = $("#event");
-    if (!e) { box.appendChild(el("p", null, "Event not found.")); return; }
+    if (!e) { box.appendChild(el("h1", "title", "Event not found")); box.appendChild(el("p", null, "We couldn't find that one. Have a look at what's on.")); return; }
     document.title = e.title + " | The Lion, Earls Colne";
+    describe(e.blurb);
+    box.appendChild(el("h1", "sr-only", e.title));
     box.appendChild(posterEl(e, true));
 
     var info = el("div", "einfo");
@@ -363,10 +373,11 @@
     if (m) {
       var ms = el("section", "emenu");
       ms.appendChild(el("p", "kicker", "On the menu"));
-      var shown = 0;
+      var shown = 0, cap = e.menu_section ? 99 : 6;
       m.sections.forEach(function (s) {
+        if (e.menu_section && s.name !== e.menu_section) return;
         s.items.forEach(function (it) {
-          if (shown >= 6) return;
+          if (shown >= cap) return;
           shown++;
           var row = el("div", "dish"), left = el("div");
           left.appendChild(el("strong", null, it.name));

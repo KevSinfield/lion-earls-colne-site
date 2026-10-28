@@ -128,7 +128,7 @@
 
 /* Light theme for the inner pages (28 Oct 2026), to match the lighter home page. The dark rules above were written
    with the colour variables, so re-pointing the variables inside .page turns the whole page light. Posters stay dark. */
-.page { --bone: #1e1513; --mute: #5d5046; --line: rgba(30,21,19,.2); --gold: #8a6424; --gold-b: #8a6424;
+.page { --bone: #1e1513; --mute: #5d5046; --line: rgba(30,21,19,.2); --gold: #7a5519; --gold-b: #7a5519;
   background: var(--cream); color: var(--ink); }
 .page .poster, .page .feature .poster { --bone: #ede4d4; --mute: rgba(237,228,212,.7); --gold: #c79a4b; --gold-b: #e3c288; --line: rgba(199,154,75,.38); color: #ede4d4; }
 .page .btn--gold { background: #c79a4b; border-color: #c79a4b; color: #171310; }

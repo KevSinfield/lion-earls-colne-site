@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow"><!-- MOCK-UP: remove when the site goes live -->
+<title>Page not found | The Lion, Earls Colne</title>
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<style>
+  /* Self-contained on purpose: a 404 can be served from any depth, so no relative CSS or images. */
+  html { background: #f7f0e2; }
+  body { margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 1.5rem; box-sizing: border-box; font: 17px/1.6 Arial, Helvetica, sans-serif; color: #1e1513; text-align: center; }
+  main { max-width: 30rem; }
+  .k { font-size: .72rem; letter-spacing: .32em; text-transform: uppercase; color: #7a5519; margin: 0 0 1rem; }
+  h1 { font: 400 clamp(2.2rem, 7vw, 3.2rem)/1.1 'Times New Roman', Times, serif; margin: 0 0 1rem; }
+  p { margin: 0 0 1.6rem; color: #5d5046; }
+  .go { display: flex; flex-wrap: wrap; gap: .8rem; justify-content: center; }
+  a { display: inline-block; font-size: .8rem; letter-spacing: .18em; text-transform: uppercase; text-decoration: none; padding: 1rem 1.5rem; border: 1px solid #7a5519; color: #1e1513; }
+  a.p { background: #171310; border-color: #171310; color: #f3ead8; }
+  a:focus-visible { outline: 2px solid #7a5519; outline-offset: 3px; }
+</style>
+</head>
+<body>
+<main>
+  <p class="k">The Lion &middot; Earls Colne</p>
+  <h1>That page has wandered off.</h1>
+  <p>We couldn't find it. Try one of these, or ring us on 01206&nbsp;911385.</p>
+  <div class="go">
+    <a class="p" id="home" href="./">Home</a>
+    <a id="menus" href="menus.html">Menus</a>
+    <a id="on" href="whats-on.html">What's on</a>
+  </div>
+</main>
+<script>
+  /* Point the links at the site root, whatever depth this page was served from (works on a GitHub project page and on a real domain). */
+  (function () {
+    var seg = location.pathname.split("/").filter(Boolean);
+    var root = location.hostname.indexOf("github.io") > -1 && seg.length ? "/" + seg[0] + "/" : "/";
+    document.getElementById("home").href = root;
+    document.getElementById("menus").href = root + "menus.html";
+    document.getElementById("on").href = root + "whats-on.html";
+    document.querySelector("link[rel=icon]").href = root + "favicon.ico";
+  })();
+</script>
+</body>
+</html>
