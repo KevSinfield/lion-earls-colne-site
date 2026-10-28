@@ -45,6 +45,70 @@
     $("#hours").appendChild(tr);
   });
 
+  // Live labels and the "Coming up" strip. ?at=2026-10-31T18:00 previews another date and time.
+  var NOW = new URLSearchParams(location.search).get("at") ? new Date(new URLSearchParams(location.search).get("at")) : new Date();
+  function p2(n) { return String(n).padStart(2, "0"); }
+  function isoDay(d) { return d.getFullYear() + "-" + p2(d.getMonth() + 1) + "-" + p2(d.getDate()); }
+  function fromIso(s) { var a = s.split("-"); return new Date(+a[0], +a[1] - 1, +a[2]); }
+  var MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  function when(e) {
+    var d = fromIso(e.date);
+    return DAYS[d.getDay()].slice(0, 3) + " " + d.getDate() + " " + MONTHS[d.getMonth()];
+  }
+  function inDays(n) { return n === 0 ? "Today" : n === 1 ? "Tomorrow" : n <= 14 ? "In " + n + " days" : ""; }
+  function kitchenLabel() {
+    var d = NOW.getDay(), t = NOW.getHours() + NOW.getMinutes() / 60, h = D.hours[d];
+    if (!h) return "Closed today";
+    if (!h.kitchen.length) return "Drinks only today";
+    var cur = h.kitchen.filter(function (w) { return t >= w[0] && t < w[1]; })[0];
+    if (cur) return "Kitchen until " + fmt(cur[1]);
+    var nxt = h.kitchen.filter(function (w) { return t < w[0]; })[0];
+    return nxt ? "Kitchen from " + fmt(nxt[0]) : "Kitchen closed now";
+  }
+  $("#actMenuL").textContent = kitchenLabel();
+
+  function renderSoon(events) {
+    var today = isoDay(NOW), todayDate = fromIso(today);
+    var real = events.filter(function (e) { return !e.sample; });  // never show the invented sample nights
+    var dated = real.filter(function (e) { return e.date && e.date >= today; })
+      .sort(function (a, b) { return a.date < b.date ? -1 : 1; });
+    var picks = dated.slice(0, 2).map(function (e) {
+      return { e: e, n: Math.round((fromIso(e.date) - todayDate) / 86400000), line: when(e) + (e.time ? " · " + e.time : "") };
+    });
+    if (picks.length < 2) {  // quiet week: fill with the regular nights, soonest first
+      real.filter(function (e) { return e.recurs; }).map(function (e) {
+        var n = (DAYS.indexOf(e.recurs) - todayDate.getDay() + 7) % 7;
+        return { e: e, n: n, line: "Every " + e.recurs + (e.time ? " · " + e.time : "") };
+      }).sort(function (a, b) { return a.n - b.n; }).slice(0, 2 - picks.length).forEach(function (x) { picks.push(x); });
+    }
+    var first = dated[0];
+    if (first && Math.round((fromIso(first.date) - todayDate) / 86400000) <= 21) {
+      $("#actEventL").textContent = "Next up";
+      $("#actEventT").textContent = (first.short || first.title) + ", " + DAYS[fromIso(first.date).getDay()].slice(0, 3);
+    }
+    if (!picks.length) return;
+    var grid = $("#soonGrid");
+    picks.forEach(function (x) {
+      var a = document.createElement("a");
+      a.className = "soon__card"; a.href = "event.html?id=" + encodeURIComponent(x.e.id);
+      var pic = document.createElement(x.e.image ? "img" : "div");
+      if (x.e.image) { pic.src = x.e.image; pic.alt = x.e.image_alt || x.e.title; pic.loading = "lazy"; }
+      else { pic.className = "soon__noimg"; pic.textContent = x.e.title; }
+      var box = document.createElement("div");
+      var w = document.createElement("span"); w.className = "soon__when"; w.textContent = x.line;
+      box.appendChild(w);
+      var chip = inDays(x.n);
+      if (chip && x.n <= 7) { var c = document.createElement("span"); c.className = "soon__chip"; c.textContent = x.n === 0 && x.e.recurs ? "Tonight" : chip; box.appendChild(c); }
+      var h = document.createElement("h3"); h.textContent = x.e.title; box.appendChild(h);
+      if (x.e.blurb) { var pp = document.createElement("p"); pp.textContent = x.e.blurb.length > 90 ? x.e.blurb.slice(0, 87).replace(/\s+\S*$/, "") + "..." : x.e.blurb; box.appendChild(pp); }
+      var m = document.createElement("span"); m.className = "soon__more"; m.textContent = "See the night"; box.appendChild(m);
+      a.appendChild(pic); a.appendChild(box); grid.appendChild(a);
+    });
+    $("#soon").hidden = false;
+  }
+  fetch("data/sample/events.json", { cache: "no-cache" }).then(function (r) { return r.json(); })
+    .then(function (d) { renderSoon(d.events || []); }).catch(function () {});
+
   // Open-now badge
   function status() {
     var now = new Date(), d = now.getDay(), t = now.getHours() + now.getMinutes() / 60;

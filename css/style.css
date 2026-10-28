@@ -61,7 +61,7 @@ em { font-style: italic; color: var(--gold-b); }
 .bar__drawer .bar__tel { display: block; padding: 1rem 0 0; text-align: center; }
 
 /* Hero */
-.hero { position: relative; min-height: calc(100svh - var(--mock-h) - var(--bar-h)); display: flex; flex-direction: column; justify-content: flex-end; overflow: hidden; }
+.hero { position: relative; min-height: max(400px, min(480px, calc(100svh - var(--mock-h) - var(--bar-h) - 190px))); display: flex; flex-direction: column; justify-content: flex-end; overflow: hidden; }
 .hero__bg { position: absolute; inset: 0; background: url("../images/lion-frontage.jpg") center 38% / cover; filter: saturate(.55) brightness(.62) contrast(1.05); transform: scale(1.03); }
 .hero__wash { position: absolute; inset: 0; background:
   linear-gradient(to top, rgba(11,9,7,.97) 0%, rgba(15,12,9,.75) 36%, rgba(23,19,16,.35) 62%, rgba(23,19,16,.6) 100%),
@@ -289,3 +289,28 @@ address { font-style: normal; color: var(--mute); margin: 1rem 0 .4rem; }
   .sticky .btn { padding: .85rem .5rem; }
 }
 @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
+
+/* "Coming up": the next one or two events, straight under the buttons row (concept 1, 28 Oct 2026). Max two cards: keep it a pointer, not a gallery. */
+.soon { background: var(--paper); color: var(--ink); padding: clamp(1.4rem, 3.5vw, 2.4rem) 0; border-top: 1px solid var(--sand); }
+.soon[hidden] { display: none; }
+.soon__head { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; margin-bottom: 1rem; }
+.soon__head .kicker { margin: 0; }
+.soon__head a { font: 500 .7rem var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--gold-d); text-underline-offset: 4px; }
+.soon__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; }
+.soon__card { display: grid; grid-template-columns: 148px 1fr; gap: 1.1rem; align-items: center; background: #fff; border: 1px solid var(--sand); text-decoration: none; color: inherit; transition: border-color .2s, transform .2s; }
+.soon__card:hover { border-color: var(--gold); transform: translateY(-2px); }
+.soon__card img, .soon__noimg { width: 148px; height: 148px; object-fit: cover; display: block; }
+.soon__noimg { display: flex; align-items: center; justify-content: center; text-align: center; padding: .8rem; background: radial-gradient(90% 80% at 50% 35%, rgba(199,154,75,.3), transparent 70%), #1b1511; color: var(--bone); font: 500 1.05rem/1.15 var(--serif); }
+.soon__card > div:last-child { padding: .4rem 1rem .4rem 0; }
+.soon__when { font: 500 .66rem var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--gold-d); }
+.soon__chip { display: inline-block; background: #2d5a36; color: #cfeed6; font: 500 .6rem var(--sans); letter-spacing: .14em; text-transform: uppercase; padding: .2rem .55rem; margin-left: .5rem; }
+.soon__card h3 { font: 500 1.4rem/1.1 var(--serif); margin: .3rem 0 .25rem; }
+.soon__card p { font-size: .88rem; color: #5d5046; line-height: 1.45; }
+.soon__more { display: inline-block; margin-top: .5rem; font: 500 .66rem var(--sans); letter-spacing: .18em; text-transform: uppercase; color: var(--gold-d); border-bottom: 1px solid var(--gold-d); }
+@media (max-width: 880px) {
+  .soon__grid { grid-template-columns: 1fr; }
+  .soon__card { grid-template-columns: 112px 1fr; gap: .9rem; }
+  .soon__card img, .soon__noimg { width: 112px; height: 112px; }
+  .soon__card h3 { font-size: 1.2rem; }
+  .soon__card p { display: none; }
+}

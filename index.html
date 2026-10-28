@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=20261028102604">
+<link rel="stylesheet" href="css/style.css?v=20261028103808">
 </head>
 <body>
 
@@ -32,10 +32,17 @@
     <div class="actions">
       <div class="wrap actions__in">
         <a class="act act--book" data-book href="#"><span class="act__l">Reserve</span><span class="act__t">Book a table</span></a>
-        <button class="act" data-menu type="button"><span class="act__l">Read</span><span class="act__t">The menu</span></button>
-        <a class="act" href="#whats-on"><span class="act__l">This week</span><span class="act__t">What's on</span></a>
+        <button class="act" data-menu type="button"><span class="act__l" id="actMenuL">Read</span><span class="act__t">The menu</span></button>
+        <a class="act" href="#soon" id="actEvent"><span class="act__l" id="actEventL">This week</span><span class="act__t" id="actEventT">What's on</span></a>
         <a class="act" href="#find"><span class="act__l">Visit</span><span class="act__t">Find us</span></a>
       </div>
+    </div>
+  </section>
+
+  <section class="soon" id="soon" aria-labelledby="soonT" hidden>
+    <div class="wrap">
+      <div class="soon__head"><p class="kicker kicker--dark" id="soonT">Coming up</p><a href="whats-on.html">All events</a></div>
+      <div class="soon__grid" id="soonGrid"></div>
     </div>
   </section>
 
@@ -156,8 +163,8 @@
   </div>
 </div>
 
-<script src="js/data.js?v=20261028102604"></script>
-<script src="js/bar.js?v=20261028102604"></script>
-<script src="js/main.js?v=20261028102604"></script>
+<script src="js/data.js?v=20261028103808"></script>
+<script src="js/bar.js?v=20261028103808"></script>
+<script src="js/main.js?v=20261028103808"></script>
 </body>
 </html>

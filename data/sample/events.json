@@ -64,7 +64,8 @@
       ],
       "todo": "TODO: check free entry and dress code against the poster.",
       "image": "images/events/halloween-disco.jpg",
-      "image_alt": "The Creepy Circus Halloween Disco poster: Saturday 31st October, 8:30pm, free entry, dress to scare, with DJ Beeber"
+      "image_alt": "The Creepy Circus Halloween Disco poster: Saturday 31st October, 8:30pm, free entry, dress to scare, with DJ Beeber",
+      "short": "Halloween Disco"
     },
     {
       "id": "live-music-6-nov",
@@ -115,7 +116,8 @@
         "A drink included",
         "Seasonal treats"
       ],
-      "todo": "TODO: start time, price and how to book (the Lion says more details are coming)."
+      "todo": "TODO: start time, price and how to book (the Lion says more details are coming).",
+      "short": "Wreath Making"
     }
   ]
 }
