@@ -42,6 +42,12 @@
     tr.children[0].textContent = DAYS[d];
     tr.children[1].textContent = h ? fmt(h.open) + " to " + fmt(h.close) : "Closed";
     tr.children[2].textContent = food;
+    var atParam = new URLSearchParams(location.search).get("at");
+    if (d === (atParam ? new Date(atParam) : new Date()).getDay()) {
+      tr.className = "is-today";
+      var tag = document.createElement("span"); tag.className = "hours__today"; tag.textContent = "Today";
+      tr.children[0].appendChild(tag);
+    }
     $("#hours").appendChild(tr);
   });
 
@@ -103,8 +109,7 @@
       if (chip && x.n <= 7) { var c = document.createElement("span"); c.className = "soon__chip"; c.textContent = x.n === 0 && x.e.recurs ? "Tonight" : chip; pic.appendChild(c); }
       var w = document.createElement("span"); w.className = "soon__when"; w.textContent = x.line;
       var h = document.createElement("h3"); h.textContent = x.e.title;
-      var m = document.createElement("span"); m.className = "soon__more"; m.textContent = "See the night";
-      a.appendChild(pic); a.appendChild(w); a.appendChild(h); a.appendChild(m); grid.appendChild(a);
+      a.appendChild(pic); a.appendChild(w); a.appendChild(h); grid.appendChild(a);
     });
     $("#soon").hidden = false;
   }

@@ -59,7 +59,7 @@
   function chrome(active) {
     var f = $("#chrome-foot");
     f.className = "foot";
-    f.innerHTML = '<div class="wrap foot__in"><span>&copy; The Lion, Earls Colne &middot; <a href="privacy.html">Privacy</a></span><span>' + (D.address || "") + "</span></div>";
+    f.innerHTML = '<div class="wrap foot__in"><span>&copy; The Lion, Earls Colne &middot; <a href="index.html#join">Weekly news</a> &middot; <a href="privacy.html">Privacy</a></span><span>' + (D.address || "") + "</span></div>";
 
     var sb = el("div", "sticky show");
     sb.innerHTML = '<a class="btn btn--gold" data-book href="#">Book a table</a><a class="btn btn--line" href="tel:' + (D.phone || "").replace(/\s/g, "") + '">Call us</a>';
