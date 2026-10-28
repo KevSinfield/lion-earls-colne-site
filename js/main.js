@@ -33,6 +33,39 @@
     $("#weekList").appendChild(li);
   });
 
+  // The week band's photo follows the day (?at=2026-10-28T12:00 previews another day).
+  // Thursday and Saturday have no photo of their own yet, so they show the food.
+  (function () {
+    var at = new URLSearchParams(location.search).get("at");
+    var dow = (at ? new Date(at) : new Date()).getDay();
+    var DAYNAMES = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    var PHOTOS = {
+      0: ["images/roast.jpg", "center 65%", "Sunday roast beef with a Yorkshire pudding, gravy and a glass of red wine"],
+      1: ["images/lion-front.jpg", "center 70%", "The front of the Lion, with its painted Bar and Dining lettering"],
+      2: ["images/poker-night.jpg", "center 40%", "Poker night at the Lion, players around an orange poker table under the old beams"],
+      3: ["images/pizza.jpg", "center 55%", "A wood-fired pizza topped with burrata, Parma ham and rocket"],
+      4: ["images/pizza.jpg", "center 55%", "A wood-fired pizza topped with burrata, Parma ham and rocket"],
+      5: ["images/tapas.jpg", "center", "Two small plates and a glass of red wine on the table"],
+      6: ["images/pizza.jpg", "center 55%", "A wood-fired pizza topped with burrata, Parma ham and rocket"]
+    };
+    var ph = $("#weekPhoto"), p = PHOTOS[dow];
+    if (ph && p) {
+      ph.style.backgroundImage = "url(" + p[0] + ")";
+      ph.style.backgroundPosition = p[1];
+      ph.setAttribute("aria-label", p[2]);
+    }
+    var today = D.week.filter(function (w) { return w.day === DAYNAMES[dow]; })[0];
+    document.querySelectorAll("#weekList li").forEach(function (li, i) {
+      if (D.week[i] && D.week[i].day === DAYNAMES[dow]) li.className = "is-today";
+    });
+    var label = today ? "Today: " + today.title : (!D.hours[dow] ? "Closed today" : "");
+    if (ph && label) {
+      var chip = document.createElement("div");
+      chip.className = "ph__day"; chip.textContent = label;
+      ph.appendChild(chip);
+    }
+  })();
+
   // Hours table
   [1, 2, 3, 4, 5, 6, 0].forEach(function (d) {
     var h = D.hours[d], tr = document.createElement("tr"), food = "";

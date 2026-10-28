@@ -352,3 +352,8 @@ address { font-style: normal; color: var(--mute); margin: 1rem 0 .4rem; }
 .strip__tag { margin-top: .8rem; font: italic 1.05rem var(--serif); color: rgba(243,234,216,.88); }
 .history--photo .history__lead { margin-top: 0; }
 @media (max-width: 880px) { .strip { min-height: 260px; } }
+
+/* The week band: photo follows the day, today's row is picked out */
+.ph__day { position: absolute; left: 0; bottom: 1.4rem; z-index: 2; background: rgba(251,247,238,.96); color: var(--ink); font: 500 .72rem var(--sans); letter-spacing: .18em; text-transform: uppercase; padding: .7rem 1.1rem .7rem 1.2rem; border-left: 4px solid var(--gold); box-shadow: 0 6px 18px rgba(0,0,0,.25); }
+.week__list li.is-today { background: rgba(199,154,75,.16); box-shadow: inset 4px 0 0 var(--gold); padding-left: .8rem; }
+.week__list li.is-today .wk__d::after { content: "Today"; display: block; margin-top: .25rem; color: var(--bitumen); background: var(--gold); font-size: .55rem; letter-spacing: .16em; padding: .1rem .4rem; width: max-content; }
